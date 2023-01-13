@@ -1,5 +1,5 @@
 <!--Lower Navbar START-->
-<nav class="navbar-second flex">
+<!-- <nav class="navbar-second flex">
    
     <div class="logo2">
       <a href="#"><img src="../../../assets/images/try2.png" alt=""></a>
@@ -20,7 +20,22 @@
     <span></span>
     <span></span>
   </button> 
-  </nav>
+  </nav> -->
+
+  <div class="d-flex justify-content-between align-items-center  _nav">
+    <a href="#"><img src="../../../assets/images/try2.png" alt=""></a>
+      
+    <ul class="flex">
+      <li><a routerlink="/about-us">About us</a></li>
+      <li><a routerlink="/product-and-services">Products & services</a></li>
+      <li><a routerlink="/sectors">Sectors</a></li>
+      <li><a routerlink="/responsibility">Csi</a></li>
+      <li><a routerlink="/downloads">Downloads</a></li>
+      <button class="btn" routerlink="/login">Log in</button>
+      
+    </ul>
+  </div>
+
 
   <div class="mobile-menu" *ngIf="showMenu">
     <button class="open-menu" (click)="showMenu = false">
