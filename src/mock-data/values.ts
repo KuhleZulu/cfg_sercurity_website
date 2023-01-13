@@ -29,3 +29,6 @@ export const VALUES_LIST: ValuesModel[] = [
 
     }
   ];
+
+  // git config --global user.email "design@uniquecommunications.co.za"
+  // git config --global user.name "KuhleZulu"
