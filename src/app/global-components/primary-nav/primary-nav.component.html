@@ -1,0 +1,42 @@
+<!--Lower Navbar START-->
+<nav class="navbar-second flex">
+   
+    <div class="logo2">
+      <a href="#"><img src="../../../assets/images/try2.png" alt=""></a>
+    </div>
+    
+    <ul class="flex">
+      <li><a routerLink="/about-us">ABOUT US</a></li>
+      <li><a routerLink="/product-and-services">PRODUCTS & SERVICES</a></li>
+      <li><a routerLink="/sectors">SECTORS</a></li>
+      <li><a routerLink="/responsibility">CSI</a></li>
+      <li><a routerLink="/downloads">DOWNLOADS</a></li>
+      <button class="btn" routerLink="/login">LOG IN</button>
+      
+    </ul>
+
+  <button class="open-menu" (click)="showMenu = true">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button> 
+  </nav>
+
+  <div class="mobile-menu" *ngIf="showMenu">
+    <button class="open-menu" (click)="showMenu = false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button> 
+    <ul class="items">
+      
+      <li><a routerLink="/about-us">ABOUT US</a></li>
+      <li><a routerLink="/product-and-services">PRODUCTS & SERVICES</a></li>
+      <li><a routerLink="/sectors">SECTORS</a></li>
+      <li><a routerLink="/responsibility">CSI</a></li>
+      <li><a routerLink="/downloads">DOWNLOADS</a></li>
+      <button class="btn" routerLink="/login">LOG IN</button>
+      
+    </ul>
+  </div>
+  <!--Lower Navbar END-->

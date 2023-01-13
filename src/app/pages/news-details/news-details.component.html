@@ -1,0 +1,9 @@
+<div class="newsdetails" *ngIf="news">
+    <h1>
+        {{news.Title}}
+    </h1>
+    <p>
+        {{news.Body}}
+    </p>
+    <img [src]="news.ImageUrl" alt="">
+</div>

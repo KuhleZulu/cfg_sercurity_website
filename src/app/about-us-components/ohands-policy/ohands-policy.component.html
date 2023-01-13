@@ -1,0 +1,27 @@
+<div class="ohandhs-policies">
+    <h1>OH & S POLICY</h1>
+    <div class="ohandhs" *ngFor="let ohandh of ohandspolicy">
+        <h1>
+            {{ohandh.Title}}
+            <span>
+                {{ohandh.TitleSpan}}
+            </span>
+        </h1>
+
+        <div class="contents">
+            <div class="content" *ngIf="ohandh.Type === 'p'">
+                <p *ngFor="let content of ohandh.content">
+                    {{content}}
+                </p>
+            </div>
+
+            <ul *ngIf="ohandh.Type === 'bullet'">
+                <li *ngFor="let content of ohandh.content">
+                    {{content}}
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+</div>

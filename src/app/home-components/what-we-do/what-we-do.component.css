@@ -1,0 +1,30 @@
+.cards{
+    padding: 4rem;
+    max-width: 106rem;
+    margin: 3rem auto;
+    display: grid;
+    grid-template-columns: repeat(4,25%);
+    grid-gap: 10px;
+    margin-top: 0px;
+}
+
+h1{
+    text-align: center;
+    margin: -1rem auto;
+    border-bottom: 3px solid blue;
+}
+
+.title h1{
+    width: 159px;
+    border-bottom-width: 3px;
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .cards{
+        grid-template-columns: repeat(1,100%);
+        padding: 0.5rem;
+        grid-gap: 30px;
+        margin-top: 35px;
+    }
+}

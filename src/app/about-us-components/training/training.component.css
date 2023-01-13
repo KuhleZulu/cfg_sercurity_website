@@ -1,0 +1,67 @@
+.training h1{
+    font-weight: 200 !important;
+    color: var(--white);
+}
+
+.training span{
+    font-weight: 300 !important;
+    color: rgb(88, 88, 88);
+}
+
+.trainings{
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+}
+
+p,h1{
+    text-align: center;
+}
+
+h1{
+    padding: 0px;
+}
+
+.title-h1{
+    color: var(--white);
+    border-bottom: 3px solid rgb(255, 255, 255);
+    padding: 0px;
+}
+
+.content img{
+    display: block;
+    margin: 0 auto 0 auto;
+    height: 530px;
+    width: 940px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    border: 0px solid #fff;
+    border-radius: 2px;
+    box-shadow: -1px 5px 15px black;
+}
+
+.contents p{
+    color: var(--white);
+}
+
+.contents{
+    text-align: justify;
+    margin: 58px auto;
+    width: 61em;
+    text-align-last: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .contents p{
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .contents img{
+        height: 356px;
+        width: 372px;
+    }
+}

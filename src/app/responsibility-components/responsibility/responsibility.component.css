@@ -1,0 +1,87 @@
+h1{
+    text-align: center;
+    margin: 2rem auto;
+    border-bottom: 3px solid blue;
+    width: 225px;
+    border-bottom-width: 3px;
+}
+
+p{
+    text-align: center;
+    max-width: 70%;
+    justify-items: center;
+    margin-left: 200px;
+
+}
+
+.second-p{
+    margin-top: 9px;
+    margin-bottom: 485px;
+}
+
+/*Basic structure of slider*/
+.container{
+    width: 673px;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    overflow: hidden;
+    margin: 0 auto 0 auto;
+    margin-left: 50%;
+    margin-top: 22%;
+    margin-bottom: -13%;
+    border: 0px solid #fff;
+    border-radius: 4px;
+    box-shadow: -1px 5px 15px black;
+}
+
+
+
+/*Area of images*/
+.wrapper{
+    width: 100%;
+    display: flex;
+    animation: slide 16s infinite;
+}
+
+img{
+    width: 100%;
+}
+/*Animation activated by keyframes*/
+@keyframes slide{
+    0%{
+        transform: translateX(0);
+    }
+    25%{
+        transform: translateX(0);
+    }
+    30%{
+        transform: translateX(-100%);
+    }
+    50%{
+        transform: translateX(-100%);
+    }
+    55%{
+        transform: translateX(-200%);
+    }
+    75%{
+        transform: translateX(-200%);
+    }
+    80%{
+        transform: translateX(-300%);
+    }
+    100%{
+        transform: translateX(-300%);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    p{
+        margin-left: 64px;
+        margin-bottom: 190px;
+    }
+    .container{
+        width: 344px;
+        margin-top: 157px;
+    }
+}

@@ -1,0 +1,30 @@
+<div class="technologies">
+    <div class="title-h1">
+        <h1>TECHNOLOGIES</h1>
+    </div>
+    
+    <div class="technology" *ngFor="let technology of technologies">
+        <h1>
+            {{technology.Title}}
+            <span>
+                {{technology.TitleSpan}}
+            </span>
+        </h1>
+
+        <div class="contents">
+            <div class="content" *ngIf="technology.Type === 'p'">
+                <p *ngFor="let content of technology.content">
+                    {{content}}
+                </p>
+            </div>
+
+            <ul *ngIf="technology.Type === 'bullet'">
+                <li *ngFor="let content of technology.content">
+                    {{content}}
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+</div>

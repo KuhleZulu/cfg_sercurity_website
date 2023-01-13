@@ -1,0 +1,21 @@
+h1{
+    text-align: center;
+    margin: 2rem auto;
+    border-bottom: 3px solid blue;
+    width: 173px;
+    border-bottom-width: 3px;
+}
+
+p{
+    text-align: justify;
+    margin: 58px auto;
+    width: 61em;
+    text-align-last: center;
+}
+
+@media only screen and (max-width: 600px) {
+    p{
+        width: 20em;
+        text-align: center;
+    }
+}

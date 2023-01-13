@@ -1,0 +1,13 @@
+<section>
+    <div class="title">
+        <h1>
+            WHAT WE DO
+        </h1>
+    </div>
+
+    <div class="cards">
+        <app-card *ngFor="let item of whatWeDo_list" (btnEvent)="readWhat_we_do($event)" [newsId]="item.Id" [image]="item.ImageUrl" [title]="item.Title" [button]="'READ MORE'"></app-card>
+    </div>
+</section>
+
+<app-popup *ngIf="showPopup" (closeEvent)="onClose()" title="SITE UNDER MAINTENANCE" [body]="body"></app-popup>

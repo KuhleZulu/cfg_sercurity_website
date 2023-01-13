@@ -1,0 +1,32 @@
+<div class="trainings">
+    <div class="title-h1">
+        <h1>TRAINING</h1>
+    </div>
+    
+    <div class="training" *ngFor="let training of trainings">
+        <h1>
+            {{training.Title}}
+            <span>
+                {{training.TitleSpan}}
+            </span>
+        </h1>
+
+        <div class="contents">
+            <div class="content" *ngIf="training.Type === 'p'">
+                <p *ngFor="let content of training.content">
+                    {{content}}
+                    <img [src]="training.ImageUrl">
+                </p>
+                
+            </div>
+
+            <ul *ngIf="training.Type === 'bullet'">
+                <li *ngFor="let content of training.content">
+                    {{content}}
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+</div>

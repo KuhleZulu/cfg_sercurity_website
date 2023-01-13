@@ -1,0 +1,16 @@
+nav{
+    display: flex;
+    background: black;
+    margin-bottom: 4rem;
+}
+
+div{
+    padding: 1rem 2rem;
+    background: rgb(33, 33, 33);
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}

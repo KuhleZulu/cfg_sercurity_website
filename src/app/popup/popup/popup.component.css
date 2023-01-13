@@ -1,0 +1,40 @@
+.popup{
+    background: rgba(4, 5, 101, 0.569);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+}
+
+.popup > .body{
+    background: #fff;
+    padding: 50px;
+    max-width: 30rem;
+    margin: auto;
+    border-radius: 22px;
+}
+p{
+    padding: 1rem 0;
+}
+button{
+    background: rgb(0, 14, 79);
+    padding: 10px 20px;
+    border: none;
+    color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+    .popup .body{
+        background: #fff;
+        padding: 26px;
+        max-width: 14rem;
+        margin-left: 7px;
+        margin: auto;
+        border-radius: 39px;
+    }
+}

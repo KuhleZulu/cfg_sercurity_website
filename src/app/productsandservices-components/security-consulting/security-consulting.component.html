@@ -1,0 +1,12 @@
+<section>
+    <h1>
+        SECURITY CONSULTANCY
+    </h1>
+
+    <div class="cards">
+        <app-card *ngFor="let item of securityConsultancyList" (btnEvent)="readSecurity_Consultancy($event)" [newsId]="item.Id" [image]="item.ImageUrl" [title]="item.Title" [button]="'READ MORE'"></app-card>
+    </div>
+</section>
+
+<app-popup *ngIf="showPopup" (closeEvent)="onClose()" title="SITE UNDER MAINTENANCE" [body]="body"></app-popup>
+

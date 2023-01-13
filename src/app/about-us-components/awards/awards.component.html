@@ -1,0 +1,9 @@
+<section>
+    <h1>
+        AWARDS & ACCOMPLISHMENTS
+    </h1>
+
+    <div class="cards">
+        <app-card *ngFor="let item of awardsList" (btnEvent)="readValues($event)" [newsId]="item.Id" [image]="item.ImageUrl" [title]="item.Title" [button]="'ABOUT'"></app-card>
+    </div>
+</section>

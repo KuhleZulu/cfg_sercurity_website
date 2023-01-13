@@ -1,0 +1,13 @@
+<h1>OVERVIEW</h1>
+<p>Calvin and Family Security operates across a myriad of market sectors. We know and understand the challenging environment unique to each industry and have the experience to mitigate the risks pertaining to each market sector with our tailor-made range of intelligence-driven products. <br> Calvin and Family Security invites you to align your brand  with our quality and customer-centric security services, thereby reaping positive customer experiences that reflect directly on your brand and business, Whichever industry you operate in. </p>
+<section>
+    <h1>
+        SECTORS
+    </h1>
+
+    <div class="cards">
+        <app-card *ngFor="let item of sectors_list" (btnEvent)="readSectors($event)" [newsId]="item.Id" [image]="item.ImageUrl" [title]="item.Title" [button]="'READ MORE'"></app-card>
+    </div>
+</section>
+
+<app-popup *ngIf="showPopup" (closeEvent)="onClose()" title="SITE UNDER MAINTENANCE" [body]="body"></app-popup>

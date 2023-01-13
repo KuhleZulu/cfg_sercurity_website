@@ -1,0 +1,31 @@
+.cards{
+  /* padding: 4rem; */
+    max-width: 90%;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(4,25%);
+    grid-gap: 10px;
+}
+
+h1{
+    text-align: center;
+    margin: 0rem auto;
+    border-bottom: 3px solid blue
+}
+
+
+section{
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .cards{
+        grid-template-columns: repeat(1,100%);
+        padding: 1rem;
+        grid-gap: 30px;
+    }
+  }
