@@ -2,6 +2,7 @@
     box-shadow: var(--box-shadow);
     background: var(--white);
     width: 100%;
+    margin: 1rem auto;
 }
 
 .card img{
@@ -37,6 +38,7 @@ h4{
     margin-bottom: 10px;
     font-size: 15px !important;
     font-family: Verdana, Geneva, sans-serif !important;
+    min-height: 5rem;
 }
 
 .card-body{
