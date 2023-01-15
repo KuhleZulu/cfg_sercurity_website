@@ -1,10 +1,11 @@
 .title h1{
     text-align: center;
     margin: 3rem auto;
-    border-bottom: 5px solid blue;
+    border-bottom: 4px solid blue;
     align-items: center;
-    width: 161px;
+    width: 245px;
     border-bottom-width: 3px;
+    font-size: 2rem;
 }
 
 
@@ -26,14 +27,16 @@
 }
 
 .info h1{
-        margin-bottom: 25px;
-        color: var(--white);
-        border-bottom: 2px solid rgb(255, 255, 255);
-        width: 332px;
+    margin-bottom: 25px;
+    color: var(--white);
+    border-bottom: 2px solid rgb(255, 255, 255);
+    width: 325px;
+    font-size: 23px;
 }
 
 .info p{
-    color:var(--white)
+    color: var(--white);
+    font-size: 15px;
 }
 
 .picture img{

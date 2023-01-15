@@ -15,9 +15,10 @@ h1{
 }
 
 .title h1{
-    width: 159px;
+    width: 235px;
     border-bottom-width: 3px;
     margin-top: 20px;
+    font-size: 2rem;
 }
 
 @media only screen and (max-width: 600px) {

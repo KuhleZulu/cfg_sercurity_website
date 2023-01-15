@@ -6,8 +6,9 @@
   width: 72px;
 }
 
-li a:hover {
-  font-weight: bolder;
+.flex a:hover {
+
+  cursor:pointer;
   color: red;
   transition: all 0.5s;
 }

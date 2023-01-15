@@ -1,16 +1,19 @@
 .cards{
-  /* padding: 4rem; */
-    max-width: 90%;
-    margin: 2rem auto;
+    max-width: 80%;
+    margin: 5rem auto;
     display: grid;
-    grid-template-columns: repeat(4,25%);
-    grid-gap: 10px;
+    grid-template-columns: repeat(3,29%);
+    grid-gap: 30px;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
 }
 
 h1{
     text-align: center;
     margin: 0rem auto;
-    border-bottom: 3px solid blue
+    border-bottom: 3px solid blue;
+    font-size: 2rem;
 }
 
 

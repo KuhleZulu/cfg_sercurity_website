@@ -42,6 +42,7 @@ import { PopupComponent } from './popup/popup/popup.component';
 import { AwardsComponent } from './about-us-components/awards/awards.component';
 import { AddNewsComponent } from './add-news/add-news.component';
 import { FormsModule } from '@angular/forms';
+import { NewCardsComponent } from './home-components/new-cards/new-cards/new-cards.component';
 
 
 
@@ -85,7 +86,8 @@ import { FormsModule } from '@angular/forms';
         ChatComponent,
         PopupComponent,
         AwardsComponent,
-        AddNewsComponent
+        AddNewsComponent,
+        NewCardsComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
