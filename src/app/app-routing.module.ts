@@ -10,9 +10,9 @@ import { DownloadsComponent } from './pages/downloads/downloads.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { CareersComponent } from './pages/careers/careers.component';
-import { NewsComponent } from './pages/news/news.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ContactusComponent } from './pages/contactus/contactus.component';
+import { ListNewsComponent } from './list-news/list-news.component';
 
 const routes: Routes = [
   {
@@ -57,7 +57,7 @@ const routes: Routes = [
   },
   {
     path: 'news',
-    component: NewsComponent,
+    component: ListNewsComponent,
   },
   {
     path: 'login',

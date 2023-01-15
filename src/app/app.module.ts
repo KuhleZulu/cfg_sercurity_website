@@ -43,6 +43,8 @@ import { AwardsComponent } from './about-us-components/awards/awards.component';
 import { AddNewsComponent } from './add-news/add-news.component';
 import { FormsModule } from '@angular/forms';
 import { NewCardsComponent } from './home-components/new-cards/new-cards/new-cards.component';
+import { ListNewsComponent } from './list-news/list-news.component';
+import { BannerComponent } from './banner/banner.component';
 
 
 
@@ -87,7 +89,9 @@ import { NewCardsComponent } from './home-components/new-cards/new-cards/new-car
         PopupComponent,
         AwardsComponent,
         AddNewsComponent,
-        NewCardsComponent
+        NewCardsComponent,
+        ListNewsComponent,
+        BannerComponent
     ],
     providers: [],
     bootstrap: [AppComponent],

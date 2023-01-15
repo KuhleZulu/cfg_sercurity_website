@@ -1,4 +1,4 @@
-h1{
+/* h1{
     text-align: center;
     margin: 2rem auto;
     border-bottom: 3px solid blue;
@@ -19,7 +19,7 @@ p{
     margin-bottom: 485px;
 }
 
-/*Basic structure of slider*/
+
 .container{
     width: 673px;
     transform: translate(-50%,-50%);
@@ -37,7 +37,7 @@ p{
 
 
 
-/*Area of images*/
+
 .wrapper{
     width: 100%;
     display: flex;
@@ -47,7 +47,7 @@ p{
 img{
     width: 100%;
 }
-/*Animation activated by keyframes*/
+
 @keyframes slide{
     0%{
         transform: translateX(0);
@@ -84,4 +84,18 @@ img{
         width: 344px;
         margin-top: 157px;
     }
+} */
+
+img{
+    object-fit: cover;
+    height: 40rem;
+    width: 100%;
+    object-position: center;
+}
+
+.container{
+    padding: 10rem 0;
+}
+.carousel{
+    margin-top: 5rem;
 }

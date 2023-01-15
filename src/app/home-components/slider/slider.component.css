@@ -1,17 +1,27 @@
-.carousel-caption{
-    bottom: unset;
-    background: var(--primary-transparent);
-    border-radius: var(--border-radius);
-    padding: 2rem;
-    width: fit-content;
-    left: 50%;
+.carousel-caption {
+  bottom: unset;
+  background: var(--primary-transparent);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  width: fit-content;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: slide-in 0.4s ease-in-out 0.5s forwards;
+}
+.carousel-caption h1 {
+  font-weight: 800;
+}
+.carousel-caption h1,
+.carousel-caption p {
+  color: var(--white);
+}
+
+@keyframes slide-in {
+  0% {
+    top: 200%;
+  }
+  100% {
     top: 50%;
-    transform: translate(-50%, -50%);
-    
-}
-.carousel-caption h1{
-    font-weight: 800;
-}
-.carousel-caption h1,.carousel-caption p{
-    color:  var(--white);
+  }
 }
