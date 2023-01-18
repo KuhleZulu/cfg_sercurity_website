@@ -1,11 +1,19 @@
 <section>
-    <h1>
-        MEMBERS & AFFILIATIONS
-    </h1>
+  <h1>MEMBERS & AFFILIATIONS</h1>
 
-    <div class="cards">
-        <app-card *ngFor="let item of affiliationsList" (btnEvent)="readValues($event)" [newsId]="item.Id" [image]="item.ImageUrl" [title]="item.Title" [button]="'ABOUT'"></app-card>
-    </div>
+  <div class="cards">
+    <app-card
+      *ngFor="let item of affiliationsList"
+      (btnEvent)="readValues($event)"
+      [newsId]="item.Id"
+      [image]="item.ImageUrl"
+    ></app-card>
+  </div>
 </section>
 
-<app-popup *ngIf="showPopup" (closeEvent)="onClose()" title="SITE UNDER MAINTENANCE" [body]="body"></app-popup>
+<app-popup
+  *ngIf="showPopup"
+  (closeEvent)="onClose()"
+  title="SITE UNDER MAINTENANCE"
+  [body]="body"
+></app-popup>

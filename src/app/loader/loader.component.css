@@ -1,0 +1,47 @@
+.loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader-wrapper {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+img {
+  width: 96%;
+
+}
+.loader-wrapper span{
+    background: rgba(119, 255, 0, 0);
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid rgb(216, 216, 216);
+    border-right: 4px solid var(--primary);
+    animation:spin 1.5s linear infinite;;
+
+}
+
+@keyframes spin {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

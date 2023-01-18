@@ -1,10 +1,9 @@
 <div class="card">
     <img [src]="image" alt="">
     <div class="card-body">
-        <h4>
+        <h4 *ngIf="title">
             {{title}}
         </h4>
-
-        <button (click)="btnClick()">{{button}}</button>
+        <button *ngIf="button" (click)="btnClick()">{{button}}</button>
     </div>
 </div>

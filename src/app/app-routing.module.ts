@@ -13,6 +13,7 @@ import { CareersComponent } from './pages/careers/careers.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ContactusComponent } from './pages/contactus/contactus.component';
 import { ListNewsComponent } from './list-news/list-news.component';
+import { CareersFormComponent } from './careers-components/careers-form/careers-form.component';
 
 const routes: Routes = [
   {
@@ -66,6 +67,10 @@ const routes: Routes = [
   {
     path: 'contactus',
     component: ContactusComponent,
+  },
+  {
+    path: 'careers-form-page',
+    component: CareersFormComponent,
   },
 
 ];

@@ -1,11 +1,20 @@
 <section>
-    <h1>
-        OUR LEADERSHIP TEAM
-    </h1>
+  <h1>OUR LEADERSHIP TEAM</h1>
 
-    <div class="cards">
-        <app-card *ngFor="let item of ourLeaderShipTeamList" (btnEvent)="readValues($event)" [newsId]="item.Id" [image]="item.ImageUrl" [title]="item.Title" [button]="'ABOUT'"></app-card>
-    </div>
+  <div class="cards">
+    <app-card
+      *ngFor="let item of ourLeaderShipTeamList"
+      (btnEvent)="readValues($event)"
+      [newsId]="item.Id"
+      [image]="item.ImageUrl"
+      [title]="item.Title"
+    ></app-card>
+  </div>
 </section>
 
-<app-popup *ngIf="showPopup" (closeEvent)="onClose()" title="SITE UNDER MAINTENANCE" [body]="body"></app-popup>
+<app-popup
+  *ngIf="showPopup"
+  (closeEvent)="onClose()"
+  title="SITE UNDER MAINTENANCE"
+  [body]="body"
+></app-popup>

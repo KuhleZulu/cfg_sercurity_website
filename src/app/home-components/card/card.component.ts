@@ -8,9 +8,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 @Input()  newsId = 0;
-@Input()  title = 'Hey';
-@Input()  image = 'assets/images/image6.jpg';
-@Input()  button = 'READ MORE';
+@Input()  title = '';
+@Input()  image = '';
+@Input()  button = '';
 @Output() btnEvent = new EventEmitter<number>();
 
   constructor(){}

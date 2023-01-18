@@ -47,6 +47,7 @@ import { ListNewsComponent } from './list-news/list-news.component';
 import { BannerComponent } from './banner/banner.component';
 import { CareersFormComponent } from './careers-components/careers-form/careers-form.component';
 import { CareersFormPageComponent } from './pages/careers-form-page/careers-form-page.component';
+import { LoaderComponent } from './loader/loader.component';
 
 
 
@@ -95,7 +96,8 @@ import { CareersFormPageComponent } from './pages/careers-form-page/careers-form
         ListNewsComponent,
         BannerComponent,
         CareersFormComponent,
-        CareersFormPageComponent
+        CareersFormPageComponent,
+        LoaderComponent
     ],
     providers: [],
     bootstrap: [AppComponent],

@@ -1,4 +1,4 @@
-<div class="_banner" *ngIf="title">
+<div class="_banner" *ngIf="title && style" [ngStyle]="style">
     <h1>
         {{title}}
     </h1>
