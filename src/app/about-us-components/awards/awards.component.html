@@ -6,4 +6,16 @@
     <div class="cards">
         <app-card *ngFor="let item of awardsList" (btnEvent)="readValues($event)" [newsId]="item.Id" [image]="item.ImageUrl" [title]="item.Title" [button]="'ABOUT'"></app-card>
     </div>
+
+     <div class="container d-flex align-items-center justify-content-center">
+        <div class="row _alignment">
+            <div class="col-md-6">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/6j9EZqJxbig" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="col-md-6">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/rTfzyU4OCNA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+     </div> 
+
 </section>

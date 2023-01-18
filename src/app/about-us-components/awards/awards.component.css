@@ -11,8 +11,13 @@ h1{
     text-align: center;
     margin: 2rem auto;
     border-bottom: 5px solid blue;
-    width: 289px;
+    width: 669px;
     border-bottom-width: 3px;
+}
+
+._alignment{
+    align-items: center;
+    
 }
 
 @media only screen and (max-width: 600px) {

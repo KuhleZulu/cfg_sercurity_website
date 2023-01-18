@@ -45,6 +45,8 @@ import { FormsModule } from '@angular/forms';
 import { NewCardsComponent } from './home-components/new-cards/new-cards/new-cards.component';
 import { ListNewsComponent } from './list-news/list-news.component';
 import { BannerComponent } from './banner/banner.component';
+import { CareersFormComponent } from './careers-components/careers-form/careers-form.component';
+import { CareersFormPageComponent } from './pages/careers-form-page/careers-form-page.component';
 
 
 
@@ -91,7 +93,9 @@ import { BannerComponent } from './banner/banner.component';
         AddNewsComponent,
         NewCardsComponent,
         ListNewsComponent,
-        BannerComponent
+        BannerComponent,
+        CareersFormComponent,
+        CareersFormPageComponent
     ],
     providers: [],
     bootstrap: [AppComponent],

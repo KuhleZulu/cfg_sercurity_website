@@ -2,7 +2,7 @@
     text-align: center;
     margin: 3rem auto;
     border-bottom: 5px solid blue;
-    width: 265px;
+    width: 347px;
     border-bottom-width: 3px;
 }
 
@@ -25,6 +25,7 @@ background-color: #2B3681;
 
 .info ul{
     list-style-type: none;
+    margin-left: -44px;
 }
 
 .info li{
@@ -55,6 +56,42 @@ border: none;
 border-radius: .4rem;
 margin-top: 2rem;
 cursor: pointer;
+}
+
+.info ul li{
+    list-style: none;
+    color: white;
+    /* border-left: 2px solid white; */
+    margin: 10px;
+    position: relative;
+    left: 0;
+    transition: 0.5s;
+}
+
+.info ul li p{
+    position: relative;
+    display: inline-block;
+    padding: 8px;
+    margin: 0;
+}
+
+.info ul li:hover{
+    left: 10px;
+}
+
+.info ul li::before{
+    /* content: ''; */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transform: scaleX(0);
+    transition: 0.5s;
+    transform-origin: left;
+}
+
+.info ul li::before{
+    transform: scaleX(1);
 }
 
 @media only screen and (max-width: 600px) {
