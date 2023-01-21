@@ -1,15 +1,18 @@
-<section>
-    <h1>
-        Add News
-    </h1>
-    <p>
-        {{ttt}}
-    </p>
+<section *ngIf="newsItem">
+
+
     <div class="form">
+        <h1>
+            Add News
+        </h1>
         <div class="form-item">
             <label for="">Title</label>
-            <input type="text" [(ngModel)]="ttt">
+            <input type="text" [(ngModel)]="newsItem.Title">
         </div>
+        <div class="form-item">
+            <label for="">Body</label>
+            <textarea type="text" [(ngModel)]="newsItem.Body"></textarea>
+        </div> 
         <div class="form-item">
             <button (click)="save()">Save</button>
         </div>

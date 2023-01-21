@@ -33,7 +33,6 @@ import { ResponsibilityComponent } from './responsibility-components/responsibil
 import { DownloadsComponent } from './pages/downloads/downloads.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { CareersComponent } from './pages/careers/careers.component';
 import { ContactusComponent } from './pages/contactus/contactus.component';
 import { HeroCtaComponent } from './hero-cta/hero-cta.component';
@@ -84,7 +83,6 @@ import { LoaderComponent } from './loader/loader.component';
         DownloadsComponent,
         SignupComponent,
         LoginComponent,
-        DashboardComponent,
         CareersComponent,
         ContactusComponent,
         HeroCtaComponent,

@@ -8,12 +8,13 @@ import { ResponsibilityComponent } from './responsibility-components/responsibil
 import { SectorsComponent } from './sectors-components/sectors/sectors.component';
 import { DownloadsComponent } from './pages/downloads/downloads.component';
 import { SignupComponent } from './pages/signup/signup.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
+
 import { CareersComponent } from './pages/careers/careers.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ContactusComponent } from './pages/contactus/contactus.component';
 import { ListNewsComponent } from './list-news/list-news.component';
 import { CareersFormComponent } from './careers-components/careers-form/careers-form.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -49,10 +50,6 @@ const routes: Routes = [
     component: SignupComponent,
   },
   {
-    path: 'dashboard',
-    component: DashboardComponent,
-  },
-  {
     path: 'careers',
     component: CareersComponent,
   },
@@ -72,6 +69,11 @@ const routes: Routes = [
     path: 'careers-form-page',
     component: CareersFormComponent,
   },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+  },
+
 
 ];
 

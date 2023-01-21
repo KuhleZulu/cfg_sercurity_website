@@ -8,16 +8,28 @@ import { NewsModel } from 'src/models/news.model';
 })
 export class AddNewsComponent implements OnInit {
 
-  ttt= 'sdsdsdsds';
+  newsItem : NewsModel = {
+    NewsId: 0,
+    Title: '',
+    Body: '',
+    ImageUrl: 'https://images.unsplash.com/photo-1665686374006-b8f04cf62d57?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
 
-  constructor() {}
+  }
+
+  // ttt= 'sdsdsdsds';
+
+  constructor(private newsService: NewsService) {}
 
   ngOnInit(): void {
     
   }
 
   save(){
-    // alert(this.ttt)
+    this.newsService.addNews(this.newsItem).subscribe((data) =>{
+      if (data){
+        alert('News Saved')
+      }
+    });
   }
 
 }

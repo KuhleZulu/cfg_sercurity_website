@@ -4,7 +4,7 @@
     </h1>
 
     <div class="cards">
-        <app-card *ngFor="let item of valuesList" (btnEvent)="readValues($event)" [newsId]="item.Id" [image]="item.ImageUrl" [title]="item.Title" [button]="'READ MORE'"></app-card>
+        <app-card *ngFor="let item of valuesList" (btnEvent)="readValues($event)" [newsId]="item.Id" [image]="item.ImageUrl" [title]="item.Title" ></app-card>
     </div>
 </section>
 
