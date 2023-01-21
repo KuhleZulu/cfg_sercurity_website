@@ -21,7 +21,7 @@ export class NewsDetailsComponent {
   }
 
   getNews(){
-    this.news = NEWS_LIST.find(x=>x.Id===this.id)
+    this.news = NEWS_LIST.find(x=>x.NewsId===this.id)
     
   }
 }

@@ -1,5 +1,5 @@
 export interface NewsModel{
-    Id: number;
+    NewsId: number;
     Title: string;
     ImageUrl: string;
     Body: string;

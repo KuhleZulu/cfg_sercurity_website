@@ -11,7 +11,6 @@ import { SliderComponent } from './home-components/slider/slider.component';
 import { GetInTouchComponent } from './home-components/get-in-touch/get-in-touch.component';
 import { NewsComponent } from './home-components/news/news.component';
 import { WhoAreWeComponent } from './home-components/who-are-we/who-are-we.component';
-import { CardComponent } from './home-components/card/card.component';
 import { WhatWeDoComponent } from './home-components/what-we-do/what-we-do.component';
 import { OurFootPrintComponent } from './home-components/our-foot-print/our-foot-print.component';
 import { OurValuesComponent } from './home-components/our-values/our-values.component';
@@ -47,6 +46,7 @@ import { BannerComponent } from './banner/banner.component';
 import { CareersFormComponent } from './careers-components/careers-form/careers-form.component';
 import { CareersFormPageComponent } from './pages/careers-form-page/careers-form-page.component';
 import { LoaderComponent } from './loader/loader.component';
+import { CardComponent } from './home-components/card/card.component';
 
 
 

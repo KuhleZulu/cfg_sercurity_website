@@ -15,6 +15,7 @@ import { ContactusComponent } from './pages/contactus/contactus.component';
 import { ListNewsComponent } from './list-news/list-news.component';
 import { CareersFormComponent } from './careers-components/careers-form/careers-form.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AddNewsComponent } from './add-news/add-news.component';
 
 const routes: Routes = [
   {
@@ -60,6 +61,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'add-news',
+    component: AddNewsComponent,
   },
   {
     path: 'contactus',
