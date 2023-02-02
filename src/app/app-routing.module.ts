@@ -16,6 +16,7 @@ import { ListNewsComponent } from './list-news/list-news.component';
 import { CareersFormComponent } from './careers-components/careers-form/careers-form.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddNewsComponent } from './add-news/add-news.component';
+import { ReadNewsComponent } from './read-news/read-news.component';
 
 const routes: Routes = [
   {
@@ -78,7 +79,10 @@ const routes: Routes = [
     path: 'dashboard',
     component: DashboardComponent,
   },
-
+  {
+    path: 'read/:id',
+    component: ReadNewsComponent,
+  },
 
 ];
 

@@ -1,0 +1,28 @@
+section{
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 3rem;
+    background: var(--cloud);
+    height: 100vh;
+}
+
+.read {
+    width: 50%;
+    background: var(--white);
+    padding: 2rem;
+}
+
+img{
+    width: 80%;
+    margin: 3rem 0;
+}
+
+button{
+    background: var(--primary);
+    color: var(--white);
+    padding: 0.4rem 1rem;
+    display: block;
+    margin-top: 3rem;
+}

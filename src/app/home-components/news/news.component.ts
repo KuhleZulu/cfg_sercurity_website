@@ -12,18 +12,27 @@ import { NewsService } from 'src/services/news.service';
 export class NewsComponent implements OnInit{
 
   //call a database to get news
-  newsList: NewsModel[] = NEWS_LIST;
+  newsList: NewsModel[] = [];
+  body = 'In emeergency.....sample text for body here';
 
-  constructor(private router: Router, private newsService: NewsService){}
+  showPopup = false;
+
+  constructor(private newsService: NewsService, private router: Router){}
 
   ngOnInit(): void {
     this.newsService.getAllNews().subscribe(data=>{
-      // alert('Done');
-    })
+      if (data && data.length){
+        this.newsList = data;
+      }
+    });
   }
 
   readNews(Id: number){
-    this.router.navigate(['/news', Id])
+    this.router.navigate(['/read', Id])
+  }
+
+  onClose(){
+    this.showPopup = false;
   }
 
 }

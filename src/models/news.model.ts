@@ -3,4 +3,6 @@ export interface NewsModel{
     Title: string;
     ImageUrl: string;
     Body: string;
+    CreatByID: string;
+    Status: string;
 }

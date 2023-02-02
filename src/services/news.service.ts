@@ -14,6 +14,10 @@ export class NewsService {
     return this.http.get<NewsModel[]>('https://cfgsecurity.co.za/api/api/news/gets-news.php');
   }
 
+  getOne(id: number): Observable<NewsModel>{
+    return this.http.get<NewsModel>(`https://cfgsecurity.co.za/api/api/news/get-one.php?NewsId=${id}`);
+  }
+
   addNews(newsItem: NewsModel) : Observable<NewsModel> {
     return this.http.post<NewsModel>('https://cfgsecurity.co.za/api/api/news/add-news.php', newsItem);
   }

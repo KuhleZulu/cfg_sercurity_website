@@ -1,0 +1,15 @@
+<section *ngIf="newsItem">
+    <div class="read">
+        <h1>
+            {{newsItem.Title}}
+        </h1>    
+        <p>
+            {{newsItem.Body}}
+        </p>
+        <img [src]="newsItem.ImageUrl" alt="">
+
+        <div class="form-item">
+            <button (click)="back()">Back</button>
+        </div>
+    </div>
+</section>
