@@ -6,7 +6,7 @@
   }
   footer * {
     font-size: 15px !important;
-    font-family: Verdana, Geneva, sans-serif !important;
+    font-family: sans-serif !important;
     box-sizing: border-box;
     border: none;
     outline: none;
@@ -16,7 +16,7 @@
   }
   .row.primary {
     display: grid;
-    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-columns: 2fr 1fr 3fr;
     align-items: stretch;
   }
   .column {
@@ -51,7 +51,7 @@
     color: #2a8ded;
   }
   .about p {
-    text-align: justify;
+
     line-height: 1.5;
     margin: 0;
   }
@@ -102,6 +102,8 @@
     text-align: center;
     color: var(--primary);
   }
+
+ 
   @media screen and (max-width: 850px) {
     .row.primary {
       grid-template-columns: 1fr;

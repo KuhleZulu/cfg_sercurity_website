@@ -53,6 +53,7 @@ import { UsersComponent } from './users/users/users.component';
 import { ToastComponent } from './toast/toast.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AnimatedCardsComponent } from './animated-cards/animated-cards.component';
 
 @NgModule({
   declarations: [
@@ -104,7 +105,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     UsersComponent,
     ToastComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    AnimatedCardsComponent
   ],
   providers: [],
   bootstrap: [AppComponent],
