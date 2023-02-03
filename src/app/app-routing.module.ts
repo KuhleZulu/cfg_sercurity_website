@@ -10,13 +10,13 @@ import { DownloadsComponent } from './pages/downloads/downloads.component';
 import { SignupComponent } from './pages/signup/signup.component';
 
 import { CareersComponent } from './pages/careers/careers.component';
-import { LoginComponent } from './pages/login/login.component';
 import { ContactusComponent } from './pages/contactus/contactus.component';
 import { ListNewsComponent } from './list-news/list-news.component';
 import { CareersFormComponent } from './careers-components/careers-form/careers-form.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddNewsComponent } from './add-news/add-news.component';
 import { ReadNewsComponent } from './read-news/read-news.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {

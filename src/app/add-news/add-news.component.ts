@@ -13,7 +13,7 @@ export class AddNewsComponent implements OnInit {
     NewsId: 0,
     Title: '',
     Body: '',
-    CreatByID: 'admin',
+    CreateById: 'admin',
     Status: 'Active',
     ImageUrl: 'https://images.unsplash.com/photo-1665686374006-b8f04cf62d57?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
 
@@ -26,7 +26,9 @@ export class AddNewsComponent implements OnInit {
   ngOnInit(): void {
     
   }
-
+  onImageUploaded(e:string){
+    this.newsItem.ImageUrl = e;
+  }
   save(){
     this.newsService.addNews(this.newsItem).subscribe((data) =>{
       if (data){

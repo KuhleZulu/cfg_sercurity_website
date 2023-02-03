@@ -1,16 +1,32 @@
-nav{
-    display: flex;
-    background: black;
-    margin-bottom: 4rem;
+.menu {
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  padding: 2rem;
+  max-width: 80%;
+  margin: 1rem auto;
+  grid-gap: 1rem;
 }
-
-div{
-    padding: 1rem 2rem;
-    background: rgb(33, 33, 33);
+.item {
+  background: white;
+  padding: 3rem;
+  text-align: center;
+  font-weight: 600;
+  border-radius: .5rem;
+  cursor: pointer;
+}
+.dashboard {
+  height: 100vh;
+  background: rgb(219, 219, 219);
 }
 
 a{
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
+    display: block;
+    z-index: 1000;
+    position: relative;
+}
+
+
+.not-logged{
+  text-align: center;
+  padding: 15% 0;
 }

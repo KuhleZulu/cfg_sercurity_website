@@ -1,17 +1,26 @@
-<nav>
-    <div>
-        <p>
-            <a routerLinks="/">Home</a>
-        </p>
+<div class="dashboard" *ngIf="user">
+  <div class="menu">
+    <div class="item">
+      <p>
+        <a routerLink="/">Home</a>
+      </p>
     </div>
-    <div>
-        <p>
-            <a routerLinks="login">Login</a>
-        </p>
+    <div  class="item">
+      <p>
+        <a routerLink="login">Login</a>
+      </p>
     </div>
-    <div>
-        <p>
-            <a href="add-news">Add News</a>
-        </p>
+    <div  class="item" (click)="goto('/add-news')">
+      <p>
+        <a >Add News</a>
+      </p>
     </div>
-</nav>
+  </div>
+</div>
+
+<div class="dashboard" *ngIf="!user">
+  <p class="not-logged">
+    Lorem ipsum dolor sit amet. <br>
+    <a style="width: fit-content; margin: 10px auto;" class="btn btn-primary" (click)="goto('/login')">Please login</a>
+  </p>
+</div>

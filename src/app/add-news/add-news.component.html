@@ -14,6 +14,10 @@
             <textarea type="text" [(ngModel)]="newsItem.Body"></textarea>
         </div> 
         <div class="form-item">
+            <label for="">Image</label>
+          <app-image-widget [image]="newsItem.ImageUrl" (imageChangedEvent)="onImageUploaded($event)"></app-image-widget>
+        </div> 
+        <div class="form-item">
             <button (click)="save()">Save</button>
         </div>
     </div>

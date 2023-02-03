@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClient, HttpClientModule} from '@angular/common/http'
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -31,7 +31,6 @@ import { SectorsComponent } from './sectors-components/sectors/sectors.component
 import { ResponsibilityComponent } from './responsibility-components/responsibility/responsibility.component';
 import { DownloadsComponent } from './pages/downloads/downloads.component';
 import { SignupComponent } from './pages/signup/signup.component';
-import { LoginComponent } from './pages/login/login.component';
 import { CareersComponent } from './pages/careers/careers.component';
 import { ContactusComponent } from './pages/contactus/contactus.component';
 import { HeroCtaComponent } from './hero-cta/hero-cta.component';
@@ -39,7 +38,7 @@ import { ChatComponent } from './quick-chat-components/chat/chat.component';
 import { PopupComponent } from './popup/popup/popup.component';
 import { AwardsComponent } from './about-us-components/awards/awards.component';
 import { AddNewsComponent } from './add-news/add-news.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewCardsComponent } from './home-components/new-cards/new-cards/new-cards.component';
 import { ListNewsComponent } from './list-news/list-news.component';
 import { BannerComponent } from './banner/banner.component';
@@ -48,65 +47,74 @@ import { CareersFormPageComponent } from './pages/careers-form-page/careers-form
 import { LoaderComponent } from './loader/loader.component';
 import { CardComponent } from './home-components/card/card.component';
 import { ReadNewsComponent } from './read-news/read-news.component';
-
-
-
+import { ImageWidgetComponent } from './image-widget/image-widget.component';
+import { UserComponent } from './users/user/user.component';
+import { UsersComponent } from './users/users/users.component';
+import { ToastComponent } from './toast/toast.component';
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        PrimaryNavComponent,
-        SecondaryNavComponent,
-        FooterComponent,
-        SliderComponent,
-        GetInTouchComponent,
-        NewsComponent,
-        WhoAreWeComponent,
-        CardComponent,
-        WhatWeDoComponent,
-        OurFootPrintComponent,
-        OurValuesComponent,
-        AboutUsComponent,
-        HomeComponent,
-        NewsDetailsComponent,
-        AffiliationsComponent,
-        LeadershipTeamComponent,
-        TechnologyComponent,
-        TrainingComponent,
-        OhandsPolicyComponent,
-        ProductAndServicesComponent,
-        CorporateServicesComponent,
-        SecurityConsultingComponent,
-        TechnicalServicesComponent,
-        CyberSecurityServicesComponent,
-        SectorsComponent,
-        ResponsibilityComponent,
-        DownloadsComponent,
-        SignupComponent,
-        LoginComponent,
-        CareersComponent,
-        ContactusComponent,
-        HeroCtaComponent,
-        ChatComponent,
-        PopupComponent,
-        AwardsComponent,
-        AddNewsComponent,
-        NewCardsComponent,
-        ListNewsComponent,
-        BannerComponent,
-        CareersFormComponent,
-        CareersFormPageComponent,
-        LoaderComponent,
-        ReadNewsComponent
-    ],
-    providers: [],
-    bootstrap: [AppComponent],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FontAwesomeModule,
-        HttpClientModule,
-        FormsModule
-    ]
+  declarations: [
+    AppComponent,
+    PrimaryNavComponent,
+    SecondaryNavComponent,
+    FooterComponent,
+    SliderComponent,
+    GetInTouchComponent,
+    NewsComponent,
+    WhoAreWeComponent,
+    CardComponent,
+    WhatWeDoComponent,
+    OurFootPrintComponent,
+    OurValuesComponent,
+    AboutUsComponent,
+    HomeComponent,
+    NewsDetailsComponent,
+    AffiliationsComponent,
+    LeadershipTeamComponent,
+    TechnologyComponent,
+    TrainingComponent,
+    OhandsPolicyComponent,
+    ProductAndServicesComponent,
+    CorporateServicesComponent,
+    SecurityConsultingComponent,
+    TechnicalServicesComponent,
+    CyberSecurityServicesComponent,
+    SectorsComponent,
+    ResponsibilityComponent,
+    DownloadsComponent,
+    SignupComponent,
+    CareersComponent,
+    ContactusComponent,
+    HeroCtaComponent,
+    ChatComponent,
+    PopupComponent,
+    AwardsComponent,
+    AddNewsComponent,
+    NewCardsComponent,
+    ListNewsComponent,
+    BannerComponent,
+    CareersFormComponent,
+    CareersFormPageComponent,
+    LoaderComponent,
+    ReadNewsComponent,
+    ImageWidgetComponent,
+    UserComponent,
+    UsersComponent,
+    ToastComponent,
+    LoginComponent,
+    DashboardComponent
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FontAwesomeModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
 })
-export class AppModule { }
+export class AppModule {}
