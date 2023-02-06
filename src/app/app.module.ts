@@ -54,6 +54,8 @@ import { ToastComponent } from './toast/toast.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AnimatedCardsComponent } from './animated-cards/animated-cards.component';
+import { FAQSectionComponent } from './faq-section/faq-section.component';
+import { AddCareersComponent } from './add-careers/add-careers.component';
 
 @NgModule({
   declarations: [
@@ -106,7 +108,9 @@ import { AnimatedCardsComponent } from './animated-cards/animated-cards.componen
     ToastComponent,
     LoginComponent,
     DashboardComponent,
-    AnimatedCardsComponent
+    AnimatedCardsComponent,
+    FAQSectionComponent,
+    AddCareersComponent
   ],
   providers: [],
   bootstrap: [AppComponent],

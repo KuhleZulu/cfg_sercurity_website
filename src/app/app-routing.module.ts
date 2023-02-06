@@ -17,6 +17,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddNewsComponent } from './add-news/add-news.component';
 import { ReadNewsComponent } from './read-news/read-news.component';
 import { LoginComponent } from './login/login.component';
+import { FAQSectionComponent } from './faq-section/faq-section.component';
 
 const routes: Routes = [
   {
@@ -82,6 +83,10 @@ const routes: Routes = [
   {
     path: 'read/:id',
     component: ReadNewsComponent,
+  },
+  {
+    path: 'faq-section',
+    component: FAQSectionComponent,
   },
 
 ];
