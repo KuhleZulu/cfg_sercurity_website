@@ -13,3 +13,14 @@ export class AppComponent  {
   constructor(){}
 
 }
+
+
+/**
+   
+Componet.html --> View 
+Componet.ts  --> Logic
+
+
+
+
+ */

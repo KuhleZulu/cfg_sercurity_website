@@ -1,4 +1,4 @@
-import { Component, OnInIt } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -6,32 +6,32 @@ import { Component, OnInIt } from '@angular/core';
   templateUrl: './add-careers.component.html',
   styleUrls: ['./add-careers.component.css']
 })
-export class AddCareersComponent implements OnInIt {
+export class AddCareersComponent implements OnInit {
 
-  careersItem : NewsModel = {
-    NewsId: 0,
-    Title: '',
-    Body: '',
-    CreateById: 'admin',
-    Status: 'Active',
-    ImageUrl: 'https://images.unsplash.com/photo-1665686374006-b8f04cf62d57?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
+  // careersItem : NewsModel = {
+  //   NewsId: 0,
+  //   Title: '',
+  //   Body: '',
+  //   CreateById: 'admin',
+  //   Status: 'Active',
+  //   ImageUrl: 'https://images.unsplash.com/photo-1665686374006-b8f04cf62d57?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
 
-  }
+  // }
 
-  constructor(private newsService: NewsService) {}
+  // constructor(private newsService: NewsService) {}
 
   ngOnInit(): void {
     
   }
-  onImageUploaded(e:string){
-    this.careersItem.ImageUrl = e;
-  }
-  save(){
-    this.newsService.addNews(this.careersItem).subscribe((data) =>{
-      if (data){
-        alert('News Saved')
-      }
-    });
-  }
+  // onImageUploaded(e:string){
+  //   this.careersItem.ImageUrl = e;
+  // }
+  // save(){
+  //   this.newsService.addNews(this.careersItem).subscribe((data) =>{
+  //     if (data){
+  //       alert('News Saved')
+  //     }
+  //   });
+  // }
 
 }

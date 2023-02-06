@@ -1,0 +1,48 @@
+<!-- <div class="div">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let item of news">
+      <div class="card">
+        <h4>Hello</h4>
+        <h2>
+          {{ item.title }}
+        </h2>
+
+        <p>
+          {{ item.completed }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="div">
+
+    <table class="table table-dark table-striped container">
+        <thead>
+            <tr>
+         
+                <th scope="col">Image</th>
+                <th scope="col">TITTLE</th>
+                <th scope="col">Body</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of news">
+           
+                <td>
+                  <img [src]="item.ImageUrl" style="width: 2rem;" alt="">
+                </td>
+                <td>{{ item.Title }}</td>
+                <td>{{ item.Body }}</td>
+            </tr>
+        
+   <tr>
+    <td colspan="2">
+      <input type="text" class="form-control mt-5 mb-2" [(ngModel)]="testNews.Title" placeholder="Title">
+      <textarea type="text" class="form-control mt-5 mb-2" [(ngModel)]="testNews.Body" placeholder="Body"></textarea>
+      <button (click)="onAdd()" class="btn btn-light">Add news</button>
+    </td>
+   </tr>
+    </tbody>
+</table>
+</div>

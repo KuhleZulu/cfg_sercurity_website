@@ -56,6 +56,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AnimatedCardsComponent } from './animated-cards/animated-cards.component';
 import { FAQSectionComponent } from './faq-section/faq-section.component';
 import { AddCareersComponent } from './add-careers/add-careers.component';
+import { TestttttComponent } from './testtttt/testtttt.component';
 
 @NgModule({
   declarations: [
@@ -110,7 +111,8 @@ import { AddCareersComponent } from './add-careers/add-careers.component';
     DashboardComponent,
     AnimatedCardsComponent,
     FAQSectionComponent,
-    AddCareersComponent
+    AddCareersComponent,
+    TestttttComponent
   ],
   providers: [],
   bootstrap: [AppComponent],
