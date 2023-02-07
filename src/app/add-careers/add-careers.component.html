@@ -1,25 +1,49 @@
-<!-- 
-<section *ngIf="careersItem">
+<div class="div">
 
+    <table class="table table-dark table-striped container">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Posted by</th>
+                <th scope="col">Career type</th>
+                <th scope="col">Created date</th>
+                <th scope="col">Closing date</th>
+                <th scope="col">Career description</th>
+                <th scope="col">Is active</th>
+                <th scope="col">Street address</th>
+                <th scope="col">City</th>
+                <th scope="col">State</th>
+                <th scope="col">Country</th>
+                <th scope="col">Zip</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of Careers">
+           
+                <td>{{ item.Id }}</td>
+                <td>{{ item.Title }}</td>
+                <td>{{ item.Posted_by_id }}</td>
+                <td>{{ item.Career_type }}</td>
+                <td>{{ item.Created_date }}</td>
+                <td>{{ item.Closing_date }}</td>
+                <td>{{ item.Career_description }}</td>
+                <td>{{ item.Is_active }}</td>
+                <td>{{ item.Street_address }}</td>
+                <td>{{ item.City }}</td>
+                <td>{{ item.State }}</td>
+                <td>{{ item.Country }}</td>
+                <td>{{ item.Zip }}</td>
 
-    <div class="form">
-        <h1>
-            Add Careers
-        </h1>
-        <div class="form-item">
-            <label for="">Title</label>
-            <input type="text" [(ngModel)]="careersItem.Title">
-        </div>
-        <div class="form-item">
-            <label for="">Body</label>
-            <textarea type="text" [(ngModel)]="careersItem.Body"></textarea>
-        </div> 
-        <div class="form-item">
-            <label for="">Image</label>
-          <app-image-widget [image]="careersItem.ImageUrl" (imageChangedEvent)="onImageUploaded($event)"></app-image-widget>
-        </div> 
-        <div class="form-item">
-            <button (click)="save()">Save</button>
-        </div>
-    </div>
-</section> -->
+            </tr>
+        
+   <tr>
+    <td colspan="2">
+      <input type="text" class="form-control mt-5 mb-2" [(ngModel)]="item.Title" placeholder="Title">
+      <textarea type="text" class="form-control mt-5 mb-2" [(ngModel)]="careers.Body" placeholder="Body"></textarea>
+      <button (click)="onAdd()" class="btn btn-light">Add news</button>
+    </td>
+   </tr>
+    </tbody>
+</table>
+</div>

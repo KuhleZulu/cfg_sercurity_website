@@ -1,24 +1,31 @@
-<section *ngIf="newsItem">
+<div class="div">
 
-
-    <div class="form">
-        <h1>
-            Add News
-        </h1>
-        <div class="form-item">
-            <label for="">Title</label>
-            <input type="text" [(ngModel)]="newsItem.Title">
-        </div>
-        <div class="form-item">
-            <label for="">Body</label>
-            <textarea type="text" [(ngModel)]="newsItem.Body"></textarea>
-        </div> 
-        <div class="form-item">
-            <label for="">Image</label>
-          <app-image-widget [image]="newsItem.ImageUrl" (imageChangedEvent)="onImageUploaded($event)"></app-image-widget>
-        </div> 
-        <div class="form-item">
-            <button (click)="save()">Save</button>
-        </div>
-    </div>
-</section>
+    <table class="table table-dark table-striped container">
+        <thead>
+            <tr>
+         
+                <th scope="col">Image</th>
+                <th scope="col">TITTLE</th>
+                <th scope="col">Body</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of news">
+           
+                <td>
+                  <img [src]="item.ImageUrl" style="width: 2rem;" alt="">
+                </td>
+                <td>{{ item.Title }}</td>
+                <td>{{ item.Body }}</td>
+            </tr>
+        
+   <tr>
+    <td colspan="2">
+      <input type="text" class="form-control mt-5 mb-2" [(ngModel)]="testNews.Title" placeholder="Title">
+      <textarea type="text" class="form-control mt-5 mb-2" [(ngModel)]="testNews.Body" placeholder="Body"></textarea>
+      <button (click)="onAdd()" class="btn btn-light">Add news</button>
+    </td>
+   </tr>
+    </tbody>
+</table>
+</div>
