@@ -19,9 +19,9 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let item of Careers">
+            <tr *ngFor="let item of careers">
            
-                <td>{{ item.Id }}</td>
+                <td>{{ item.Career_id }}</td>
                 <td>{{ item.Title }}</td>
                 <td>{{ item.Posted_by_id }}</td>
                 <td>{{ item.Career_type }}</td>
@@ -39,9 +39,19 @@
         
    <tr>
     <td colspan="2">
-      <input type="text" class="form-control mt-5 mb-2" [(ngModel)]="item.Title" placeholder="Title">
-      <textarea type="text" class="form-control mt-5 mb-2" [(ngModel)]="careers.Body" placeholder="Body"></textarea>
-      <button (click)="onAdd()" class="btn btn-light">Add news</button>
+      <input type="text" class="form-control mt-5 mb-2" [(ngModel)]="careersItem.Title" placeholder="Title">
+      <input type="text" class="form-control mt-5 mb-2" [(ngModel)]="careersItem.Posted_by_id" placeholder="Posted_by_id">
+      <input type="text" class="form-control mt-5 mb-2" [(ngModel)]="careersItem.Career_type" placeholder="Career_type">
+      <textarea type="text" class="form-control mt-5 mb-2" [(ngModel)]="careersItem.Career_description" placeholder="Career_description"></textarea>
+      <input type="text" class="form-control mt-5 mb-2" [(ngModel)]="careersItem.Is_active" placeholder="Is_active">
+      <textarea type="text" class="form-control mt-5 mb-2" [(ngModel)]="careersItem.Street_address" placeholder="Street Address"></textarea>
+      <input type="text" class="form-control mt-5 mb-2" [(ngModel)]="careersItem.City" placeholder="City">      
+      <input type="text" class="form-control mt-5 mb-2" [(ngModel)]="careersItem.State" placeholder="State">      
+      <input type="text" class="form-control mt-5 mb-2" [(ngModel)]="careersItem.Country" placeholder="Country">      
+      <input type="text" class="form-control mt-5 mb-2" [(ngModel)]="careersItem.Zip" placeholder="Zip">      
+
+      <button (click)="save()" class="btn btn-light">Save Career</button>
+      <button routerLink="/" class="btn btn-light">Home</button>
     </td>
    </tr>
     </tbody>

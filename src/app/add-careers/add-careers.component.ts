@@ -10,6 +10,8 @@ import { CareersService } from 'src/services/careers.service';
 })
 export class AddCareersComponent implements OnInit {
 
+  careers: CareersModel[] = [];
+
   careersItem : CareersModel = {
 
   Career_id: 0,

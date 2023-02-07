@@ -18,6 +18,7 @@ import { AddNewsComponent } from './add-news/add-news.component';
 import { ReadNewsComponent } from './read-news/read-news.component';
 import { LoginComponent } from './login/login.component';
 import { FAQSectionComponent } from './faq-section/faq-section.component';
+import { AddCareersComponent } from './add-careers/add-careers.component';
 
 const routes: Routes = [
   {
@@ -87,6 +88,10 @@ const routes: Routes = [
   {
     path: 'faq-section',
     component: FAQSectionComponent,
+  },
+  {
+    path: 'add-careers',
+    component: AddCareersComponent,
   },
 
 ];
