@@ -23,7 +23,7 @@ export class TestttttComponent {
   };
   constructor(private todoService: TodoService) {
     // Get news
-this.getNewDotiManje();
+    this.getNewDotiManje();
   }
 
   onAdd() {
@@ -32,7 +32,7 @@ this.getNewDotiManje();
     });
   }
 
-  getNewDotiManje(){
+  getNewDotiManje() {
     this.todoService.getTodos().subscribe((data) => {
       this.news = data;
     });
