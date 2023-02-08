@@ -13,7 +13,6 @@ class Careers
     ) {
 
         $query = "INSERT INTO careers(
-            Career_id,
             Title,
             Posted_by_id,
             Career_type,
@@ -25,27 +24,27 @@ class Careers
             City,
             State,
             Country,
-            Zip,
+            Zip
         )
-        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
         try {
             $stmt = $this->conn->prepare($query);
             if ($stmt->execute(array(
-                $careers->Career_id,
                 $careers->Title,
                 $careers->Posted_by_id,
                 $careers->Career_type,
                 $careers->Created_date,
+                $careers->Closing_date,
                 $careers->Career_description,
                 $careers->Is_active,
                 $careers->Street_address,
                 $careers->City,
                 $careers->State,
                 $careers->Country,
-                $careers->Zip,
+                $careers->Zip
             ))) {
                 $Id = $this->conn->lastInsertId();
-                return $this->getById($careers->Career_id);
+                return $this->getById($Id);
             }
         } catch (Exception $e) {
             return array("ERROR", $e);
