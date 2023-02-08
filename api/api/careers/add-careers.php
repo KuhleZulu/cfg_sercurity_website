@@ -7,7 +7,7 @@ $data = json_decode(file_get_contents("php://input"));
 $database = new Database();
 $db = $database->connect();
 
-$service = new careers($db);
+$service = new Careers($db);
 
 $result = $service->add($data);
 

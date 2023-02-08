@@ -33,7 +33,7 @@ export class AddCareersComponent implements OnInit {
   constructor(private careersService: CareersService) {}
 
   ngOnInit(): void {
-    
+    this.getAll();
   }
 
   save(){
@@ -43,6 +43,12 @@ export class AddCareersComponent implements OnInit {
       }
     })
   }
-
+getAll(){
+  this.careersService.getAllCareers().subscribe((data) =>{
+    if (data){
+    this.careers = data;
+    }
+  })
+}
 
 }

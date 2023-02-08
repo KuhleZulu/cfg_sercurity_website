@@ -11,14 +11,14 @@ export class CareersService {
   constructor(private http: HttpClient) { }
 
   getAllCareers(): Observable<CareersModel[]>{
-    return this.http.get<CareersModel[]>('https://cfgsecurity.co.za/api/api/news/get-careers.php');
+    return this.http.get<CareersModel[]>('https://cfgsecurity.co.za/api/api/careers/get-careers.php');
   }
 
   getOne(id: number): Observable<CareersModel>{
-    return this.http.get<CareersModel>(`https://cfgsecurity.co.za/api/api/news/get-one.php?Career_id=${id}`);
+    return this.http.get<CareersModel>(`https://cfgsecurity.co.za/api/api/careers/get-one.php?Career_id=${id}`);
   }
 
   addCareers(careersItem: CareersModel) : Observable<CareersModel> {
-    return this.http.post<CareersModel>('https://cfgsecurity.co.za/api/api/news/add-careers.php', careersItem);
+    return this.http.post<CareersModel>('https://cfgsecurity.co.za/api/api/careers/add-careers.php', careersItem);
   }
 }

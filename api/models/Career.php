@@ -45,7 +45,7 @@ class Careers
                 $careers->Zip,
             ))) {
                 $Id = $this->conn->lastInsertId();
-                return $this->getById($Career_id);
+                return $this->getById($careers->Career_id);
             }
         } catch (Exception $e) {
             return array("ERROR", $e);
