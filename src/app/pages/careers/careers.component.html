@@ -9,20 +9,24 @@
         </tr>
       </thead>
 
-      <tbody>
+      <tbody *ngFor="let item of CareersList">
         <tr>
-          <td>Control Room Manager</td>
-          <td>2022/12/06</td>
-          <td>Durban North</td>
+          <td>[Title]="item.Title"</td>
+          <td>[Closing_date]="item.Closing_date"</td>
+          <td>[Street_address]="item.Street_address"</td>
           <td>
             <span class="action_btn">
               <a routerLink="/careers-form-page">Apply</a>
+              <a href="#">View</a>
               <a href="#">Share</a>
             </span>
           </td>
         </tr>
 
-        <tr>
+
+      
+
+        <!-- <tr>
           <td>Marketing Specialist</td>
           <td>2022/12/06</td>
           <td>Gauteng</td>
@@ -70,7 +74,7 @@
               </span>
             </td>
           </tr>
-  
+   -->
 
       </tbody>
     </table>
