@@ -34,6 +34,7 @@ class Careers
                 $careers->Posted_by_id,
                 $careers->Career_type,
                 $careers->Created_date,
+                $careers->Closing_date,
                 $careers->Career_description,
                 $careers->Is_active,
                 $careers->Street_address,
@@ -43,7 +44,7 @@ class Careers
                 $careers->Zip
             ))) {
                 $Id = $this->conn->lastInsertId();
-                return $this->getById($careers->Career_id);
+                return $this->getById($Id);
             }
         } catch (Exception $e) {
             return array("ERROR", $e);
