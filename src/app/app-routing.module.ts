@@ -19,6 +19,7 @@ import { ReadNewsComponent } from './read-news/read-news.component';
 import { LoginComponent } from './login/login.component';
 import { FAQSectionComponent } from './faq-section/faq-section.component';
 import { AddCareersComponent } from './add-careers/add-careers.component';
+import { CareerListComponent } from './career-list/career-list.component';
 
 const routes: Routes = [
   {
@@ -92,6 +93,14 @@ const routes: Routes = [
   {
     path: 'add-careers',
     component: AddCareersComponent,
+  },
+  {
+    path: 'list-careers',
+    component: CareerListComponent,
+  },
+  {
+    path: 'careers',
+    component: CareersComponent,
   },
 
 ];

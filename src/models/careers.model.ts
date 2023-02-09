@@ -12,4 +12,5 @@ export interface CareersModel{
     State: string;
     Country: string;
     Zip: string;
+    Selected?:boolean
 }

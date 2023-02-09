@@ -2,5 +2,6 @@
 <app-primary-nav></app-primary-nav>
 <router-outlet></router-outlet>
 <app-footer></app-footer>
-<app-toast></app-toast>
+<app-toast *ngIf="ux && ux.Toast" [toast]="ux.Toast"></app-toast>
+<app-loader *ngIf="ux && ux.Loading" [autoStop]="false"></app-loader>
 <!-- <app-testtttt></app-testtttt> -->

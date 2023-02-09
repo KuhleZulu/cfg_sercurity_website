@@ -1,19 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-
-
+import { UxModel } from 'src/models/ux.model';
+import { UxService } from 'src/services/ux.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent  {
+export class AppComponent {
   title = 'CFG Security';
-  
-  constructor(){}
+  ux?: UxModel;
 
+  constructor(private uxService: UxService) {
+    uxService.uxObservable.subscribe((data) => {
+      if (data) {
+        this.ux = data;
+      }
+    });
+  }
 }
-
 
 /**
    

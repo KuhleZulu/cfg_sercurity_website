@@ -16,7 +16,6 @@ class Careers
             Title,
             Posted_by_id,
             Career_type,
-            Created_date,
             Closing_date,
             Career_description,
             Is_active,
@@ -26,14 +25,13 @@ class Careers
             Country,
             Zip
         )
-        VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+        VALUES (?,?,?,?,?,?,?,?,?,?,?)";
         try {
             $stmt = $this->conn->prepare($query);
             if ($stmt->execute(array(
                 $careers->Title,
                 $careers->Posted_by_id,
                 $careers->Career_type,
-                $careers->Created_date,
                 $careers->Closing_date,
                 $careers->Career_description,
                 $careers->Is_active,
@@ -54,24 +52,23 @@ class Careers
     public function update(
         $careers
     ){
-        $query = "update user set
-        Title = ?
-        Posted_by_id = ?
-        Career_type = ?
-        Created_date = ?
-        Career_description = ?
-        Is_active = ?
-        Street_address = ?
-        City = ?
-        State = ?
-        Country = ?
+        $query = "update careers set
+        Title = ?,
+        Posted_by_id = ?,
+        Career_type = ?,
+        Created_date = ?,
+        Career_description = ?,
+        Is_active = ?,
+        Street_address = ?,
+        City = ?,
+        State = ?,
+        Country = ?,
         Zip = ?
         where Career_id = ?
         ";
         try{
             $stmt = $this->conn->prepare($query);
             if ($stmt->execute(array(
-                $careers->Career_id,
                 $careers->Title,
                 $careers->Posted_by_id,
                 $careers->Career_type,
@@ -83,6 +80,7 @@ class Careers
                 $careers->State,
                 $careers->Country,
                 $careers->Zip,
+                $careers->Career_id
             ))) {
                 return $this->getById($careers->Career_id);
             }
@@ -135,6 +133,15 @@ class Careers
         if ($stmt->rowCount()) {
             $news = $stmt->fetch(PDO::FETCH_ASSOC);
             return $news;
+        }
+    }
+    public function runAnyQuery( $query){        
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute(array());
+
+        if ($stmt->rowCount()) {
+            $reponse = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $reponse;
         }
     }
 }

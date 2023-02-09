@@ -1,30 +1,16 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CareersModel } from 'src/models/careers.model';
 import { CareersService } from 'src/services/careers.service';
 import { UxService } from 'src/services/ux.service';
 
 @Component({
-  selector: 'app-add-careers',
-  templateUrl: './add-careers.component.html',
-  styleUrls: ['./add-careers.component.css'],
+  selector: 'app-update-career',
+  templateUrl: './update-career.component.html',
+  styleUrls: ['./update-career.component.css']
 })
-export class AddCareersComponent implements OnInit {
+export class UpdateCareerComponent {
+  @Input() careersItem?: CareersModel;
   @Output() doneEvent = new EventEmitter<CareersModel>();
-  careersItem: CareersModel = {
-    Career_id: 0,
-    Title: '',
-    Posted_by_id: 0,
-    Career_type: '',
-    Created_date: '',
-    Closing_date: '',
-    Career_description: '',
-    Is_active: '',
-    Street_address: '',
-    City: '',
-    State: '',
-    Country: '',
-    Zip: '',
-  };
 
   constructor(
     private careersService: CareersService,
@@ -33,12 +19,14 @@ export class AddCareersComponent implements OnInit {
 
   ngOnInit(): void {}
   cancel() {
-    this.doneEvent.emit(undefined);
+    this.doneEvent.emit(undefined
+      )
   }
 
   save() {
+    if(!this.careersItem) return;
     this.uxService.updateUXState({ Loading: true });
-    this.careersService.addCareers(this.careersItem).subscribe((data) => {
+    this.careersService.updateCareers(this.careersItem).subscribe((data) => {
       if (data) {
         this.uxService.updateUXState({
           Toast: {

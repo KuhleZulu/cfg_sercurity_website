@@ -57,6 +57,8 @@ import { AnimatedCardsComponent } from './animated-cards/animated-cards.componen
 import { FAQSectionComponent } from './faq-section/faq-section.component';
 import { AddCareersComponent } from './add-careers/add-careers.component';
 import { TestttttComponent } from './testtttt/testtttt.component';
+import { CareerListComponent } from './career-list/career-list.component';
+import { UpdateCareerComponent } from './update-career/update-career.component';
 
 @NgModule({
   declarations: [
@@ -112,7 +114,9 @@ import { TestttttComponent } from './testtttt/testtttt.component';
     AnimatedCardsComponent,
     FAQSectionComponent,
     AddCareersComponent,
-    TestttttComponent
+    TestttttComponent,
+    CareerListComponent,
+    UpdateCareerComponent
   ],
   providers: [],
   bootstrap: [AppComponent],

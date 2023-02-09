@@ -1,0 +1,120 @@
+<div class="_overlay" *ngIf="careersItem">
+    <div class="bg-white p-4">
+  
+      <div class="card">
+        <div class="card-header">
+            <h4>
+                Update career
+
+            </h4>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Title</label>
+              <input
+                type="text"
+                class="form-control  "
+                [(ngModel)]="careersItem.Title"
+                placeholder="Title"
+              />
+            </div>
+  
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"> Type</label>
+              <select
+                type="text"
+                class="form-control  "
+                [(ngModel)]="careersItem.Career_type"
+                placeholder="Career_type"
+              >
+              <option value="Permnant">Permnant</option>
+              <option value="Temporal">Temporal</option>
+              <option value="Contract">Contract</option>
+              </select>
+            </div>
+  
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">
+                Description</label
+              >
+              <textarea
+                type="text"
+                class="form-control  "
+                [(ngModel)]="careersItem.Career_description"
+                placeholder="Career_description"
+              ></textarea>
+            </div>
+  
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >Street Address</label
+              >
+  
+              <textarea
+                type="text"
+                class="form-control  "
+                [(ngModel)]="careersItem.Street_address"
+                placeholder="Street Address"
+              ></textarea>
+            </div>
+  
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">City</label>
+                  <input
+                    type="text"
+                    class="form-control  "
+                    [(ngModel)]="careersItem.City"
+                    placeholder="City"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">State</label>
+                  <input
+                    type="text"
+                    class="form-control  "
+                    [(ngModel)]="careersItem.State"
+                  />
+                </div>
+              </div>
+            </div>
+  
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"
+                    >Country</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control  "
+                    [(ngModel)]="careersItem.Country"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Zip</label>
+                  <input
+                    type="text"
+                    class="form-control  "
+                    [(ngModel)]="careersItem.Zip"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer text-muted">
+          <button (click)="cancel()" class="btn btn-light">Cancel</button>
+          <button (click)="save()" class="btn btn-primary">Update Career</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

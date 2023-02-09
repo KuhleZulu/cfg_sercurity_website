@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-loader',
   templateUrl: './loader.component.html',
-  styleUrls: ['./loader.component.css']
+  styleUrls: ['./loader.component.css'],
 })
 export class LoaderComponent implements OnInit {
+  @Input() autoStop = true;
   ngOnInit(): void {
-   setTimeout(() => {
-     this.showLoader = false;
-   }, 1500);
+    if (this.autoStop) this.stop();
+  }
+
+  stop() {
+    setTimeout(() => {
+      this.showLoader = false;
+    }, 1500);
   }
   showLoader = true;
 }
