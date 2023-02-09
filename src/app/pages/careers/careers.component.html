@@ -12,8 +12,8 @@
       <tbody *ngFor="let item of CareersList">
         <tr>
           <td>{{item.Title}}</td>
-          <td>[Closing_date]="item.Closing_date"</td>
-          <td>[Street_address]="item.Street_address"</td>
+          <td>{{item.Closing_date}}</td>
+          <td>{{item.Street_address}}</td>
           <td>
             <span class="action_btn">
               <a routerLink="/careers-form-page">Apply</a>
@@ -22,8 +22,6 @@
             </span>
           </td>
         </tr>
-
-
       
 
         <!-- <tr>
