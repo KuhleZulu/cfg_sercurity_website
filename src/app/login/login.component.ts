@@ -51,8 +51,8 @@ export class LoginComponent implements OnInit {
           this.uxService.updateUXState({
             Loading: false,
             Toast: {
-              Title: 'Incorrect login details',
-              Message: `We couldn't log you in. please try again`,
+              Title: 'Success',
+              Message: `You are logged in`,
               Classes: ['_success'],
             },
           });

@@ -31,7 +31,7 @@ class User
         if ($this->getByEmail($Email) > 0) {
             return "user already exists";
         }
-        $UserId = getUuid($this->conn);
+        $UserId = $this->getUuid($this->conn);
         $UserToken = bin2hex(openssl_random_pseudo_bytes(16));
 
         $query = "INSERT INTO user(
@@ -82,6 +82,15 @@ class User
         }
     }
 
+    function getUuid($conn){
+    $stmt = $conn->prepare("SELECT uuid() as Id from dual");
+    $stmt->execute(array());
+
+    if ($stmt->rowCount()){
+        $uuid = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $uuid['Id'];
+    }
+}
     public function getUserByEmailandPassword($email, $password)
     {
         $query = "SELECT  * FROM user WHERE Email =  ? AND BINARY Password = ?";

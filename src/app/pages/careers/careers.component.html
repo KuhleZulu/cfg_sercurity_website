@@ -16,9 +16,8 @@
           <td>{{item.Street_address}}</td>
           <td>
             <span class="action_btn">
-              <a routerLink="/careers-form-page">Apply</a>
-              <a href="#">View</a>
-              <a href="#">Share</a>
+              <a [routerLink]="'/application/'+item.Career_id">View job</a>
+              <!-- <a href="#">Share</a> -->
             </span>
           </td>
         </tr>

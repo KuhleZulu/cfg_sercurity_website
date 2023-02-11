@@ -59,6 +59,9 @@ import { AddCareersComponent } from './add-careers/add-careers.component';
 import { TestttttComponent } from './testtttt/testtttt.component';
 import { CareerListComponent } from './career-list/career-list.component';
 import { UpdateCareerComponent } from './update-career/update-career.component';
+import { ApplicantComponent } from './applicant/applicant.component';
+import { ApplyComponent } from './apply/apply.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -116,7 +119,10 @@ import { UpdateCareerComponent } from './update-career/update-career.component';
     AddCareersComponent,
     TestttttComponent,
     CareerListComponent,
-    UpdateCareerComponent
+    UpdateCareerComponent,
+    ApplicantComponent,
+    ApplyComponent,
+    UpdateUserComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

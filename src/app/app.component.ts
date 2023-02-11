@@ -12,7 +12,13 @@ export class AppComponent {
   ux?: UxModel;
 
   constructor(private uxService: UxService) {
-    uxService.uxObservable.subscribe((data) => {
+  setTimeout(() => {
+    this.laod()
+  }, 5);
+  }
+
+  laod(){
+    this.uxService.uxObservable.subscribe((data) => {
       if (data) {
         this.ux = data;
       }

@@ -70,12 +70,16 @@
             </div>
             <div class="col-md-6">
               <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">State</label>
-                <input
+                <label for="exampleInputEmail1" class="form-label">Province</label>
+                <select
                   type="text"
                   class="form-control  "
                   [(ngModel)]="careersItem.State"
-                />
+                >
+                <option [value]="item" *ngFor="let item of ['Eastern Cape','Gauteng','Free State']">
+                  {{item}}
+                </option>
+                </select>
               </div>
             </div>
           </div>

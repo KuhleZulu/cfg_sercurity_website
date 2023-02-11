@@ -20,6 +20,9 @@ import { LoginComponent } from './login/login.component';
 import { FAQSectionComponent } from './faq-section/faq-section.component';
 import { AddCareersComponent } from './add-careers/add-careers.component';
 import { CareerListComponent } from './career-list/career-list.component';
+import { ApplicantComponent } from './applicant/applicant.component';
+import { ApplyComponent } from './apply/apply.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 const routes: Routes = [
   {
@@ -67,6 +70,10 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
+    path: 'sign-up',
+    component: SignupComponent,
+  },
+  {
     path: 'add-news',
     component: AddNewsComponent,
   },
@@ -101,6 +108,18 @@ const routes: Routes = [
   {
     path: 'careers',
     component: CareersComponent,
+  },
+  {
+    path: 'applicant',
+    component: ApplicantComponent,
+  },
+  {
+    path: 'application/:id',
+    component: ApplyComponent,
+  },
+  {
+    path: 'update-user',
+    component: UpdateUserComponent,
   },
 
 ];

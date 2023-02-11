@@ -1,12 +1,11 @@
 <app-banner title="Sign up" bg="assets/images/team.PNG"></app-banner>
 
-<div class="login bg-white box-shadow border-radius">
+<div *ngIf="user" class="login bg-white box-shadow border-radius">
   <div class="form-group">
     <label for="">Your name</label>
     <input
-    (keyup)="validate('Name')"
       type="text"
-      [(ngModel)]="newUser.Name"
+      [(ngModel)]="user.Name"
       class="form-control"
       name=""
       id=""
@@ -19,8 +18,7 @@
     <input
       type="text"
       [ngClass]="{'border-red': phoneNumberError}"
-      (keyup)="validate('PhoneNumber')"
-      [(ngModel)]="newUser.PhoneNumber"
+      [(ngModel)]="user.PhoneNumber"
       class="form-control"
       name=""
       id=""
@@ -31,7 +29,7 @@
     <label for="">Your email</label>
     <input
       type="email"
-      [(ngModel)]="newUser.Email"
+      [(ngModel)]="user.Email"
       class="form-control"
       name=""
       id=""
@@ -42,7 +40,7 @@
     <label for="">Create password</label>
     <input
       type="password"
-      [(ngModel)]="newUser.Password"
+      [(ngModel)]="user.Password"
       class="form-control"
       name=""
       id=""

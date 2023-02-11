@@ -27,7 +27,7 @@
             <i *ngIf="allSelected"  (click)="selectAll()" class="bi _check bi-check-square-fill"></i>
             Title</th>
           <th scope="col">Type</th>
-          <th scope="col">Created date</th>
+          <th scope="col">Posted date</th>
           <th scope="col">Closing date</th>
           <th scope="col">Status</th>
         </tr>
@@ -40,8 +40,8 @@
             <i *ngIf="item.Selected"  (click)="select(item)" class="bi _check bi-check-square-fill"></i>
             {{ item.Title }}</td>
           <td>{{ item.Career_type }}</td>
-          <td>{{ item.Created_date | date : "medium" }}</td>
-          <td>{{ item.Closing_date | date : "medium" }}</td>
+          <td>{{ item.Created_date | date : "mediumDate" }}</td>
+          <td>{{ item.Closing_date | date : "mediumDate" }}</td>
           <td>{{ item.Is_active }}</td>
           <td>
             <button (click)="edit(item)" class="btn btn-light p-2">

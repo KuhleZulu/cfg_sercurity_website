@@ -41,8 +41,13 @@ export class AccountService {
 
 
   login(credentials: { email: any; password: any; }): Observable<User> {
-    // this._loading.next(true);
     return this.http.post<any>(`${this.url}/account/login.php`, credentials);
+  }
+  signUp(user: User): Observable<User> {
+    return this.http.post<User>(`${this.url}/user/add-user.php`, user);
+  }
+  updateUser(user: User): Observable<User> {
+    return this.http.post<User>(`${this.url}/user/update-user.php`, user);
   }
 
  
