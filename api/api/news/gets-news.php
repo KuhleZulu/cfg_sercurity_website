@@ -10,3 +10,4 @@ $service = new News($db);
 $result = $service->getAllNews();
 
 echo json_encode($result);
+

@@ -30,6 +30,16 @@ export class SignupComponent {
     CreateUserId: '',
     ModifyUserId: '',
     StatusId: '1',
+    IdentityNumber: '',
+    dateofbirth: '',
+    gender: '',
+    currentlyemployed: '',
+    salaryexpected: '',
+    Experience: '',
+    Certificates: '',
+    MaritalStatus: '',
+    WillingToRelocate: '',
+    HighestQualification: ''
   };
   confirmPasswordError?: string;
   emailError?: string;

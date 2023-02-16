@@ -12,3 +12,5 @@ $service = new News($db);
 $result = $service->add($data);
 
 echo json_encode($result);
+
+

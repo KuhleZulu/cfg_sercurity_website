@@ -30,6 +30,18 @@ export interface User {
   Viewing?: boolean;
   PhoneNumber: any;
   Company?: any;
+  Cv?: any;
+  IdentityNumber: string;
+  dateofbirth: string;
+  gender: string;
+  currentlyemployed: string;
+  salaryexpected: string;
+  Experience: string;
+  Certificates: string;
+  MaritalStatus: string;
+  WillingToRelocate: string;
+  HighestQualification: string;
+  
 }
 
 export const initUser = (): User => {
@@ -54,5 +66,17 @@ export const initUser = (): User => {
     AddressLineWork:
       '',
     AddressUrlWork: '',
+    Cv: '',
+    IdentityNumber: '',
+    dateofbirth: '',
+    gender: '',
+    currentlyemployed: '',
+    salaryexpected: '',
+    Experience: '',
+    Certificates: '',
+    MaritalStatus: '',
+    WillingToRelocate: '',
+    HighestQualification: '',
+
   };
 };

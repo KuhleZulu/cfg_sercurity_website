@@ -11,3 +11,4 @@ $service = new News($db);
 $result = $service->getById($_GET['NewsId']);
 
 echo json_encode($result);
+

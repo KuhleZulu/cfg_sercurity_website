@@ -1,4 +1,4 @@
-<app-banner title="Sign up" bg="assets/images/team.PNG"></app-banner>
+<app-banner title="Update User" bg="assets/images/team.PNG"></app-banner>
 
 <div *ngIf="user" class="login bg-white box-shadow border-radius">
   <div class="form-group">
@@ -13,6 +13,33 @@
     />
     <div class="error" *ngIf="nameError">{{nameError}}</div>
   </div>
+  <!--Surname-->
+  <div class="form-group">
+    <label for="">Surname</label>
+    <input
+      type="text"
+      [(ngModel)]="user.Surname"
+      class="form-control"
+      name=""
+      id=""
+      [ngClass]="{'border-red': nameError}"
+    />
+    <div class="error" *ngIf="nameError">{{nameError}}</div>
+  </div>
+  <!--Address-->
+  <div class="form-group">
+    <label for="">Address</label>
+    <input
+      type="text"
+      [(ngModel)]="user.Address"
+      class="form-control"
+      name=""
+      id=""
+      [ngClass]="{'border-red': nameError}"
+    />
+    <div class="error" *ngIf="nameError">{{nameError}}</div>
+  </div>
+   <!--Phone Number-->
   <div class="form-group">
     <label for="">Phone Number</label>
     <input
@@ -25,6 +52,7 @@
     />
     <div class="error" *ngIf="phoneNumberError">{{phoneNumberError}}</div>
   </div>
+   <!--Email-->
   <div class="form-group">
     <label for="">Your email</label>
     <input
@@ -36,8 +64,138 @@
     />
     <div class="error" *ngIf="emailError">{{emailError}}</div>
   </div>
+   <!--Identity Number-->
   <div class="form-group">
-    <label for="">Create password</label>
+    <label for="">Identity Number</label>
+    <input
+      type="email"
+      [(ngModel)]="user.IdentityNumber"
+      class="form-control"
+      name=""
+      id=""
+    />
+    <div class="error" *ngIf="emailError">{{emailError}}</div>
+  </div>
+  <!--Date of birth-->
+  <div class="form-group">
+    <label for="">Date of birth</label>
+    <input
+      type="email"
+      [(ngModel)]="user.dateofbirth"
+      class="form-control"
+      name=""
+      id=""
+    />
+    <div class="error" *ngIf="emailError">{{emailError}}</div>
+  </div>
+  <!--Gender-->
+  <div class="form-group">
+    <label for="">Gender</label>
+    <input
+      type="email"
+      [(ngModel)]="user.gender"
+      class="form-control"
+      name=""
+      id=""
+    />
+    <div class="error" *ngIf="emailError">{{emailError}}</div>
+  </div>
+  <!--Currently Employed-->
+  <div class="form-group">
+    <label for="">Currently Employed?</label>
+    <input
+      type="email"
+      [(ngModel)]="user.currentlyemployed"
+      class="form-control"
+      name=""
+      id=""
+    />
+    <div class="error" *ngIf="emailError">{{emailError}}</div>
+  </div>
+  <!--Salary Expected-->
+  <div class="form-group">
+    <label for="">Salary Expected?</label>
+    <input
+      type="email"
+      [(ngModel)]="user.salaryexpected"
+      class="form-control"
+      name=""
+      id=""
+    />
+    <div class="error" *ngIf="emailError">{{emailError}}</div>
+  </div>
+  <!--Experience-->
+  <div class="form-group">
+    <label for="">Experience?</label>
+    <input
+      type="email"
+      [(ngModel)]="user.Experience"
+      class="form-control"
+      name=""
+      id=""
+    />
+    <div class="error" *ngIf="emailError">{{emailError}}</div>
+  </div>
+    <!--Certificates-->
+    <div class="form-group">
+      <label for="">Certificates?</label>
+      <input
+        type="email"
+        [(ngModel)]="user.Certificates"
+        class="form-control"
+        name=""
+        id=""
+      />
+      <div class="error" *ngIf="emailError">{{emailError}}</div>
+    </div>
+        <!--MaritalStatus-->
+        <div class="form-group">
+          <label for="">MaritalStatus?</label>
+          <input
+            type="email"
+            [(ngModel)]="user.MaritalStatus"
+            class="form-control"
+            name=""
+            id=""
+          />
+          <div class="error" *ngIf="emailError">{{emailError}}</div>
+        </div>
+            <!--WillingToRelocate-->
+            <div class="form-group">
+              <label for="">WillingToRelocate?</label>
+              <input
+                type="email"
+                [(ngModel)]="user.WillingToRelocate"
+                class="form-control"
+                name=""
+                id=""
+              />
+              <div class="error" *ngIf="emailError">{{emailError}}</div>
+            </div>
+                        <!-- HighestQualification-->
+                        <div class="form-group">
+                          <label for=""> HighestQualification?</label>
+                          <input
+                            type="email"
+                            [(ngModel)]="user.HighestQualification"
+                            class="form-control"
+                            name=""
+                            id=""
+                          />
+                          <div class="error" *ngIf="emailError">{{emailError}}</div>
+                        </div>
+  <!-- ,
+  dateofbirth: '',
+  gender: '',
+  currentlyemployed: '',
+  salaryexpected: '',
+  Experience: '',
+  Certificates: '',
+  MaritalStatus: '',
+  WillingToRelocate: '',
+  HighestQualification: '', -->
+  <div class="form-group">
+    <label for="">New password</label>
     <input
       type="password"
       [(ngModel)]="user.Password"
@@ -64,7 +222,7 @@
     class="btn btn-primary"
     (click)="signUp()"
   >
-    Sign Up
+    Update User
   </button>
 <!-- 
   <div class="alert alert-warning mt-5" *ngIf="error" role="alert">
