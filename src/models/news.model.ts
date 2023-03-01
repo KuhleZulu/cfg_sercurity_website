@@ -1,4 +1,5 @@
 export interface NewsModel{
+    Selected?: boolean;
     NewsId: number;
     Title: string;
     ImageUrl: string;

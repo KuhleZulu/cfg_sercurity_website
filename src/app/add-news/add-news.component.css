@@ -1,40 +1,4 @@
-section{
-    display: flex;
-    align-content: center;
-    justify-content: flex-start;
-    flex-direction: column;
-    padding: 3rem;
-    background: var(--cloud);
-    height: 100vh;
-}
-
-.form{
-    width: 50%;
-    background: var(--white);
-    padding: 2rem;
-}
-
-input, label, button, textarea{
-    display: block;
-}
-
-input, textarea{
-    padding: 0.4rem 1rem;
-    background: var(--cloud);
-    border: none;
-    width: 100%;
-}
-
-button{
-    background: var(--primary);
-    color: var(--white);
-    padding: 0.4rem 1rem;
-}
-
-.form-item, h1{
-    margin-bottom: 2rem;
-}
-
-textarea{
-    min-height: 10rem;
+._check{
+    margin-right: 1rem;
+    cursor: pointer;
 }

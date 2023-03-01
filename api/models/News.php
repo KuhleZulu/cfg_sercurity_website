@@ -40,27 +40,21 @@ class News
     public function update(
         $news
     ){
-        $query = "update user set
-        Name = ?
-        Email = ?
-        Status = ?
-        Role = ?
-        ParentId = ?
+        $query = "update news set
+        Title = ?,
+        Body = ?,
         ImageUrl = ?
-        where UserId = ?
+        where NewsId = ?
         ";
         try{
             $stmt = $this->conn->prepare($query);
             if ($stmt->execute(array(
-                $news->Name,
-                $news->Email,
-                $news->Status,
-                $news->Role,
-                $news->ParentId,
+                $news->Title,
+                $news->Body,
                 $news->ImageUrl,
-                $news->UserId
+                $news->NewsId
             ))) {
-                return $this->getById($news->UserId);
+                return $this->getById($news->NewsId);
             }
         } catch (Exception $e) {
             return array("ERROR", $e);
@@ -77,29 +71,29 @@ class News
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
     }
-
-    public function getByEmail($Email)
+    public function getTop6News()
     {
-        $query = "SELECT * FROM user WHERE Email =?";
+        $query = "SELECT * FROM news order by CreatedDate DESC LIMIT 6
+        ";
         $stmt = $this->conn->prepare($query);
-        $stmt->execute(array($Email));
+        $stmt->execute(array());
 
         if ($stmt->rowCount()){
-            return $stmt->fetch(PDO::FETCH_ASSOC);
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
     }
 
-    public function login($Email, $Password)
-    {
-        $query = "SELECT * FROM user WHERE Email =? and BINARY Password =?";
-        $stmt = $this->conn->prepare($query);
-        $stmt->execute(array($Email,$Password));
 
-        if ($stmt->rowCount()){
-            $news = $stmt->fetch(PDO::FETCH_ASSOC);
-            $news["Password"] = "************";
-            return $news;
+    public function delete($NewsId){
+        $query = "SELECT  FROM news WHERE NewsId =?";
+        
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute(array($NewsId));
+
+        if ($stmt->rowCount()) {
+            return true;
         }
+        return true;
     }
 
     public function getById($NewsId){
