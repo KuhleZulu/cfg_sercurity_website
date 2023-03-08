@@ -41,7 +41,7 @@ export interface User {
   MaritalStatus: string;
   WillingToRelocate: string;
   HighestQualification: string;
-  
+  Selected?: boolean
 }
 
 export const initUser = (): User => {

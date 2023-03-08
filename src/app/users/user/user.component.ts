@@ -40,7 +40,7 @@ export class UserComponent implements OnInit {
       this.user = initUser();
       return;
     }
-    this.userService.getUserSync(this.userId).subscribe((data) => {
+    this.userService.getUser(this.userId).subscribe((data) => {
       if (data) {
         this.user = data;
       }
@@ -56,7 +56,7 @@ export class UserComponent implements OnInit {
       return;
     }
     this.uxService.updateUXState({ Loading: true });
-    this.userService.updateUserSync(this.user).subscribe((data) => {
+    this.userService.updateUser(this.user).subscribe((data) => {
       this.user = data;
       this.uxService.updateUXState({
         Loading: false,

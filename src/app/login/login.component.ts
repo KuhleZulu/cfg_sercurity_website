@@ -47,7 +47,6 @@ export class LoginComponent implements OnInit {
         if (user && user.UserId) {
           this.error = '';
           this.accountService.updateUserState(user);
-          if ('Admin' === user.UserType) this.routeTo.navigate(['/dashboard']);
           this.uxService.updateUXState({
             Loading: false,
             Toast: {
@@ -56,6 +55,8 @@ export class LoginComponent implements OnInit {
               Classes: ['_success'],
             },
           });
+          if ('Admin' === user.UserType) this.routeTo.navigate(['/dashboard']);
+          if ('Applicant' === user.UserType) this.routeTo.navigate(['/applicant']);
         } else {
           let err: any = user;
           this.error = 'Username or password is incorrect';

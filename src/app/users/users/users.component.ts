@@ -28,7 +28,7 @@ export class UsersComponent implements OnInit {
     this.getUsers();
   }
   getUsers() {
-    this.userService.getAllUsersStync().subscribe((data) => {
+    this.userService.getAllUsers().subscribe((data) => {
       if (data) {
         this.users = data;
       }
@@ -41,7 +41,7 @@ export class UsersComponent implements OnInit {
     this.uxService.updateUXState({ Loading: true });
 
     user.StatusId = 99;
-    this.userService.updateUserSync(user).subscribe((data) => {
+    this.userService.updateUser(user).subscribe((data) => {
       this.users = this.users.filter((x) => x.UserId !== user.UserId);
       this.uxService.updateUXState({
         Loading: false,

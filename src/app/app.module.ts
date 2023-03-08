@@ -62,6 +62,7 @@ import { UpdateCareerComponent } from './update-career/update-career.component';
 import { ApplicantComponent } from './applicant/applicant.component';
 import { ApplyComponent } from './apply/apply.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
+import { ListApplicantsComponent } from './list-applicants/list-applicants.component';
 
 @NgModule({
   declarations: [
@@ -123,6 +124,7 @@ import { UpdateUserComponent } from './update-user/update-user.component';
     ApplicantComponent,
     ApplyComponent,
     UpdateUserComponent,
+    ListApplicantsComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

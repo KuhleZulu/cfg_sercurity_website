@@ -39,7 +39,7 @@ export class SignupComponent {
     Certificates: '',
     MaritalStatus: '',
     WillingToRelocate: '',
-    HighestQualification: ''
+    HighestQualification: '',
   };
   confirmPasswordError?: string;
   emailError?: string;
@@ -63,7 +63,7 @@ export class SignupComponent {
   }
   validate(name = ''): boolean {
     let isFormValid = true;
-    if(name === 'Name'){
+    if (name === 'Name') {
       this.nameError = '';
       if (!this.newUser.Name) {
         this.nameError = 'Please enter your name';
@@ -72,7 +72,7 @@ export class SignupComponent {
       return isFormValid;
     }
 
-    if(name === 'PhoneNumber'){
+    if (name === 'PhoneNumber') {
       this.phoneNumberError = '';
       if (!this.newUser.PhoneNumber) {
         this.phoneNumberError = 'Please enter your phone number';
@@ -111,9 +111,21 @@ export class SignupComponent {
   }
   signUp() {
     if (this.validate()) {
-     this.accountService.signUp(this.newUser).subscribe(data=>{
-
-     }) 
+      this.accountService.signUp(this.newUser).subscribe((user) => {
+        if (user && user.UserId) {
+          this.accountService.updateUserState(user);
+          this.uxService.updateUXState({
+            Loading: false,
+            Toast: {
+              Title: 'Success',
+              Message: `You are logged in`,
+              Classes: ['_success'],
+            },
+          });
+          if ('Admin' === user.UserType) this.routeTo.navigate(['/dashboard']);
+          if ('Applicant' === user.UserType) this.routeTo.navigate(['/applicant']);
+        }
+      });
     }
   }
 }

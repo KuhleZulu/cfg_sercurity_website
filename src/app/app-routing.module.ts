@@ -23,6 +23,7 @@ import { CareerListComponent } from './career-list/career-list.component';
 import { ApplicantComponent } from './applicant/applicant.component';
 import { ApplyComponent } from './apply/apply.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
+import { ListApplicantsComponent } from './list-applicants/list-applicants.component';
 
 const routes: Routes = [
   {
@@ -120,6 +121,10 @@ const routes: Routes = [
   {
     path: 'update-user',
     component: UpdateUserComponent,
+  },
+  {
+    path: 'list-applicants',
+    component: ListApplicantsComponent,
   },
 
 ];

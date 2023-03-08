@@ -50,48 +50,28 @@ export class UserService {
   }
 
   getAllUsers() {
-    this.http.get<User[]>(`${this.url}/api/user/get-all-users.php`).subscribe(data => {
-      if (data) {
-        this.updateUserListState(data);
-      }
-    });
+    return this.http.get<User[]>(`${this.url}/user/get-all-users.php`)
   }
-  getUsersStync(companyId: string, userType: string) {
-    return this.http.get<User[]>(`${this.url}/api/user/get-users.php?CompanyId=${companyId}&UserType=${userType}`)
-  }
-  getAllUsersStync() {
-    return this.http.get<User[]>(`${this.url}/api/user/get-all-users.php`)
-  }
+
 
   getUser(userId: string) {
-    this.http.get<User>(`${this.url}/api/user/get-user.php?UserId=${userId}`).subscribe(data => {
-      if (data) {
-        this.updateUserState(data);
-      }
-    });
+    return this.http.get<User>(`${this.url}/user/get-user.php?UserId=${userId}`);
   }
 
-  getUserSync(userId: string) {
-    return this.http.get<User>(`${this.url}/api/user/get-user.php?UserId=${userId}`);
-  }
-  updateUser(user: User) {
-    this.http.post<User>(`${this.url}/api/user/update-user.php`, user).subscribe(data => {
-      if (data) {
-        this.updateUserState(data);
-      }
-    });
-  }
-  updateUserSync(user: User): Observable<User> {
-    return this.http.post<User>(`${this.url}/api/user/update-user.php`, user);
+  updateUser(user: User): Observable<User> {
+    return this.http.post<User>(`${this.url}/user/update-user.php`, user);
   }
 
   add(user: User) {
-    return this.http.post<User>(`${this.url}/api/user/add-user.php`, user);
-  }
-  addUserCompany(user: User) {
-    return this.http.post<User>(`${this.url}/api/user/add-user-company.php`, user);
+    return this.http.post<User>(`${this.url}/user/add-user.php`, user);
   }
 
 
+  deleteUser(id: number): Observable<User>{
+    return this.http.get<User>(`api/user/add-user-company.php?UserId=${id}`);
+  }
+  query(query: string): Observable<User[]>{
+    return this.http.get<User[]>(`https://cfgsecurity.co.za/api/api/careers/run.php?Query=${query}`);
+  }
 
 }
