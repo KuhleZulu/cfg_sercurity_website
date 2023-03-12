@@ -1,74 +1,79 @@
 import { Component } from '@angular/core';
+import { Application, initApplication } from 'src/models/application.model';
 import { USER_TYPES } from 'src/models/constants';
-import { initUser, User } from 'src/models/user.model';
+import { User, initUser } from 'src/models/user.model';
+import { ApplicationService } from 'src/services/application.service';
 import { QueryService } from 'src/services/query.service';
 import { UserService } from 'src/services/user.service';
 import { UxService } from 'src/services/ux.service';
 
 @Component({
-  selector: 'app-list-applicants',
-  templateUrl: './list-applicants.component.html',
-  styleUrls: ['./list-applicants.component.css'],
+  selector: 'app-applications',
+  templateUrl: './applications.component.html',
+  styleUrls: ['./applications.component.css'],
 })
-export class ListApplicantsComponent {
-  users: User[] = [];
+export class ApplicationsComponent {
+  applications: Application[] = [];
   showAddUser = false;
   showUpdateUser = false;
   allSelected = false;
   search = '';
-  user?: User;
+  application?: Application;
   passWordType = 'password';
   // ttt= 'sdsdsdsds';
 
-  constructor(private userService: UserService, private uxService: UxService, private queryService: QueryService) {}
+  constructor(
+    private userService: UserService,
+    private uxService: UxService,
+    private queryService: QueryService,
+    private applicationService: ApplicationService,
+  ) {}
 
   ngOnInit(): void {
-    this.getUsers();
+    this.getAllApllications();
   }
-  getUsers() {
-    this.userService.getAllUsers().subscribe((data) => {
+  getAllApllications() {
+    this.applicationService.getAll().subscribe((data) => {
       if (data && data.length) {
-        this.users = data.filter((x) => x.UserType === USER_TYPES.APPLICANT);
+        this.applications = data;
       }
     });
   }
-  onImageUploaded(e: string) {
-    if (this.user) this.user.Dp = e;
-  }
+
   save() {
-    if (!this.user) return;
-    this.userService.add(this.user).subscribe((data) => {
+    if (!this.application) return;
+    this.applicationService.save(this.application).subscribe((data) => {
       if (data) {
-        this.getUsers();
+        this.getAllApllications();
         this.showAddUser = false;
       }
     });
   }
   update() {
-    if (!this.user) return;
-    this.userService.updateUser(this.user).subscribe((data) => {
+    if (!this.application) return;
+    this.applicationService.save(this.application).subscribe((data) => {
       if (data) {
-        this.getUsers();
+        this.getAllApllications();
         this.showUpdateUser = false;
       }
     });
   }
 
   delete() {
-    const selected = this.users.filter((x) => x.Selected);
+    const selected = this.applications.filter((x) => x.Selected);
     if (selected.length) {
       //const ids = selected.map(x=>x.Career_id);
-      let q = 'DELETE FROM user WHERE UserId in (#pl)';
+      let q = 'DELETE FROM applications WHERE ApplicatonId in (#pl)';
       let id = '';
       selected.forEach((x) => {
-        id += `'${x.UserId}'` + ',';
+        id += `'${x.ApplicatonId}'` + ',';
       });
       id = id.substring(0, id.length - 1);
       q = q.replace('#pl', id);
 
       this.uxService.updateUXState({ Loading: true });
       this.queryService.query(q).subscribe((data) => {
-        this.getUsers();
+        this.getAllApllications();
         this.uxService.updateUXState({
           Toast: {
             Title: 'Users Deleted',
@@ -82,21 +87,21 @@ export class ListApplicantsComponent {
   }
   selectAll() {
     if (this.allSelected) {
-      this.users.map((x) => (x.Selected = false));
+      this.applications.map((x) => (x.Selected = false));
       this.allSelected = false;
     } else {
-      this.users.map((x) => (x.Selected = true));
+      this.applications.map((x) => (x.Selected = true));
       this.allSelected = true;
     }
   }
 
   deleteOne(user: User) {
-    this.users.map((x) => (x.Selected = false));
+    this.applications.map((x) => (x.Selected = false));
     this.allSelected = false;
     let q = `DELETE FROM news WHERE NewsId = ${user.UserId}`;
     this.uxService.updateUXState({ Loading: true });
     this.userService.query(q).subscribe((data) => {
-      this.getUsers();
+      this.getAllApllications();
       this.uxService.updateUXState({
         Toast: {
           Title: 'Careers Deleted',
@@ -108,17 +113,16 @@ export class ListApplicantsComponent {
     });
   }
 
-  select(user: User) {
+  select(user: Application) {
     user.Selected = !user.Selected;
   }
 
-  edit(user: User) {
-    this.user = user;
+  edit(user: Application) {
+    this.application = user;
     this.showUpdateUser = true;
   }
 
   initUser() {
-    this.user = initUser();
-    this.user.UserType = USER_TYPES.APPLICANT;
+    this.application = initApplication();
   }
 }

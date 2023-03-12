@@ -11,7 +11,26 @@ import { UxService } from 'src/services/ux.service';
 export class UpdateCareerComponent {
   @Input() careersItem?: CareersModel;
   @Output() doneEvent = new EventEmitter<CareersModel>();
+  editorStyle = {
+    marginBottom: '30px',
+    height: '600px',
+    background: '#fff',
+  }; 
+  
+  editorConfig = {
+    toolbar: [
+      ['bold', 'italic', 'underline', 'strike'],
+      [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+      [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+      [{ 'color': [] }, { 'background': [] }],
+      [{ 'font': [] }],
+      ['blockquote', 'code-block'],
 
+      ['clean'],
+      // ['formula']
+
+    ]
+  };
   constructor(
     private careersService: CareersService,
     private uxService: UxService

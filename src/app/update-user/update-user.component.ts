@@ -12,6 +12,7 @@ import { UxService } from 'src/services/ux.service';
 export class UpdateUserComponent {
   confirmPassword = '';
   hidePassword = true;
+  passWordType = 'password';
 
  user?: User
   confirmPasswordError?: string;

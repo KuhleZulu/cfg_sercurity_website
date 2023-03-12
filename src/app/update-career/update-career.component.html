@@ -86,12 +86,15 @@
             <label for="exampleInputEmail1" class="form-label">
               Description</label
             >
-            <textarea
+            <!-- <textarea
               type="text"
               class="form-control"
               [(ngModel)]="careersItem.Career_description"
               placeholder="Career_description"
-            ></textarea>
+            ></textarea> -->
+            <quill-editor [styles]="editorStyle" [modules]="editorConfig" [(ngModel)]="careersItem.Career_description">
+
+            </quill-editor>
           </div>
 
           <div class="mb-3">

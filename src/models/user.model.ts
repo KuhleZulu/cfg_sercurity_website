@@ -30,7 +30,8 @@ export interface User {
   Viewing?: boolean;
   PhoneNumber: any;
   Company?: any;
-  Cv?: any;
+  Cv?: string;
+  IdCopy?: string;
   IdentityNumber: string;
   dateofbirth: string;
   gender: string;

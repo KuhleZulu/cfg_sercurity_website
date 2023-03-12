@@ -142,7 +142,7 @@ class Careers
         $stmt->execute(array());
 
         if ($stmt->rowCount()) {
-            $reponse = $stmt->fetch(PDO::FETCH_ASSOC);
+            $reponse = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $reponse;
         }
     }

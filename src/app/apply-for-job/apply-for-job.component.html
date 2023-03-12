@@ -1,0 +1,79 @@
+<app-banner
+  *ngIf="career"
+  [title]="'You are applying for: ' + career.Title"
+  bg="assets/images/team.PNG"
+></app-banner>
+
+<div *ngIf="user" class="login bg-white box-shadow border-radius">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="">Your name</label>
+        <input type="text" [(ngModel)]="user.Name" class="form-control" />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <!--Surname-->
+      <div class="form-group">
+        <label for="">Surname</label>
+        <input type="text" [(ngModel)]="user.Surname" class="form-control" />
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <!--Phone Number-->
+      <div class="form-group">
+        <label for="">Phone Number</label>
+        <input
+          type="text"
+          [(ngModel)]="user.PhoneNumber"
+          class="form-control"
+        />
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <!--Email-->
+      <div class="form-group">
+        <label for="">Your email</label>
+        <input type="email" [(ngModel)]="user.Email" class="form-control" />
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <!--Identity Number-->
+      <div class="form-group">
+        <label for="">Identity Number</label>
+        <input
+          type="email"
+          [(ngModel)]="user.IdentityNumber"
+          class="form-control"
+        />
+      </div>
+    </div>
+
+    <div class="col-md-12 mb-2">
+      <div class="form-group">
+        <label for="">Your CV</label>
+        <app-uplaod
+          fileName="Your CV.pdf"
+          (imageChangedEvent)="saveFile($event)"
+          [file]="user.Cv || ''"
+        ></app-uplaod>
+      </div>
+    </div>
+    <div class="col-md-12 mb-2">
+      <div class="form-group">
+        <label for="">Your Id</label>
+        <app-uplaod
+          fileName="Your Id.pdf"
+          (imageChangedEvent)="saveFileId($event)"
+          [file]="user.Cv || ''"
+        ></app-uplaod>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <button class="btn btn-primary" (click)="save()">Send Aplication</button>
+    </div>
+  </div>
+</div>

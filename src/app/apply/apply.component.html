@@ -9,7 +9,7 @@
           <a routerLink="/careers" class="btn btn-dark">
             <i class="bi bi-arrow-left"></i> Back
           </a>
-          <button  class="btn btn-primary"><i class="bi bi-briefcase"></i> Apply now</button>
+          <a [routerLink]="'/apply-for-job/'+career.Career_id" class="btn btn-primary"><i class="bi bi-briefcase"></i> Apply now</a>
         </div>
       </div>
   
@@ -21,45 +21,8 @@
       
      
       <h4> Full Job Description</h4>
-      <p class="w-50">
-        Junior Full Stack Developer
-      <br>
-      Scripting: JavaScript, jQuery, Angular 8 or React JS, ASP. net Core 3.1 to 5, Entity Framework, PHP, Laravel, Bootstrap, Tailwind
-      Database: MySQL, MSSQL - Proven track record of SQL development is a must
-      GIT, JIRA, Trello
-      EXPERIENCE: 2+YEARS
-      Location: Umhlanga Durban
-      Permanent position
-      Overview
+      <p class="w-50 pre-wrap" [innerHTML]="career.Career_description">
       
-      As a junior Developer you will be responsible for maintaining and updating existing applications; this will include back-end services, such as database tables and stored procedures, as well as client-side functionality.
-      
-      Your primary responsibilities will be to support these applications, and to coordinate with the rest of the team working on different layers of the business infrastructure.
-      
-      In addition to existing applications you will also be exposed to new projects that will require development from conception to launch.
-      
-      Responsibilities
-      
-      Translate specifications and task details into functional applications
-      
-      Design, build, and maintain efficient, reusable, and reliable code
-      Ensure the best possible performance, quality, and responsiveness of applications
-      Identify bottlenecks and bugs, and devise solutions to these problems
-      Help maintain code quality, structure, and optimisation
-      Job Types: Full-time, Permanent
-      
-      Salary: R12,000.00 - R15,000.00 per month
-      
-      Application Question(s):
-      
-      Describe the development methodology that you're familiar with?
-      Describe one of your passion development project?
-      Education:
-      
-      Diploma (Required)
-      Experience:
-      
-      software development: 2 years (Required)
       </p>
      
     </div>

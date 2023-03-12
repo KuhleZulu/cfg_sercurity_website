@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PrimaryNavComponent } from './global-components/primary-nav/primary-nav.component';
 import { SecondaryNavComponent } from './global-components/secondary-nav/secondary-nav.component';
 import { FooterComponent } from './global-components/footer/footer.component';
@@ -63,6 +63,10 @@ import { ApplicantComponent } from './applicant/applicant.component';
 import { ApplyComponent } from './apply/apply.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { ListApplicantsComponent } from './list-applicants/list-applicants.component';
+import { QuillModule } from 'ngx-quill';
+import { ApplyForJobComponent } from './apply-for-job/apply-for-job.component';
+import { UplaodComponent } from './uplaod/uplaod.component';
+import { ApplicationsComponent } from './applications/applications.component';
 
 @NgModule({
   declarations: [
@@ -125,16 +129,20 @@ import { ListApplicantsComponent } from './list-applicants/list-applicants.compo
     ApplyComponent,
     UpdateUserComponent,
     ListApplicantsComponent,
+    ApplyForJobComponent,
+    UplaodComponent,
+    ApplicationsComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule,
+    // FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    QuillModule.forRoot()
   ],
 })
 export class AppModule {}

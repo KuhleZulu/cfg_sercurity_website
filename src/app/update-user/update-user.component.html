@@ -1,31 +1,94 @@
 <app-banner title="Update User" bg="assets/images/team.PNG"></app-banner>
 
 <div *ngIf="user" class="login bg-white box-shadow border-radius">
-  <div class="form-group">
-    <label for="">Your name</label>
-    <input
-      type="text"
-      [(ngModel)]="user.Name"
-      class="form-control"
-      name=""
-      id=""
-      [ngClass]="{'border-red': nameError}"
-    />
-    <div class="error" *ngIf="nameError">{{nameError}}</div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="">Your name</label>
+        <input
+          type="text"
+          [(ngModel)]="user.Name"
+          class="form-control"
+          [ngClass]="{ 'border-red': nameError }"
+        />
+        <div class="error" *ngIf="nameError">{{ nameError }}</div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <!--Surname-->
+      <div class="form-group">
+        <label for="">Surname</label>
+        <input
+          type="text"
+          [(ngModel)]="user.Surname"
+          class="form-control"
+          [ngClass]="{ 'border-red': nameError }"
+        />
+        <div class="error" *ngIf="nameError">{{ nameError }}</div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <!--Phone Number-->
+      <div class="form-group">
+        <label for="">Phone Number</label>
+        <input
+          type="text"
+          [ngClass]="{ 'border-red': phoneNumberError }"
+          [(ngModel)]="user.PhoneNumber"
+          class="form-control"
+        />
+        <div class="error" *ngIf="phoneNumberError">{{ phoneNumberError }}</div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <!--Email-->
+      <div class="form-group">
+        <label for="">Your email</label>
+        <input type="email" [(ngModel)]="user.Email" class="form-control" />
+        <div class="error" *ngIf="emailError">{{ emailError }}</div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <!--Identity Number-->
+      <div class="form-group">
+        <label for="">Identity Number</label>
+        <input
+          type="email"
+          [(ngModel)]="user.IdentityNumber"
+          class="form-control"
+        />
+        <div class="error" *ngIf="emailError">{{ emailError }}</div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <!--Date of birth-->
+      <div class="form-group">
+        <label for="">Date of birth</label>
+        <input
+          type="date"
+          [(ngModel)]="user.dateofbirth"
+          class="form-control"
+        />
+        <div class="error" *ngIf="emailError">{{ emailError }}</div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <!--Gender-->
+      <div class="form-group">
+        <label for="">Gender</label>
+        <select [(ngModel)]="user.gender" class="form-control">
+          <option [value]="item" *ngFor="let item of ['Male','Female']">
+            {{item}}
+          </option>
+        </select>
+        <div class="error" *ngIf="emailError">{{ emailError }}</div>
+      </div>
+    </div>
   </div>
-  <!--Surname-->
-  <div class="form-group">
-    <label for="">Surname</label>
-    <input
-      type="text"
-      [(ngModel)]="user.Surname"
-      class="form-control"
-      name=""
-      id=""
-      [ngClass]="{'border-red': nameError}"
-    />
-    <div class="error" *ngIf="nameError">{{nameError}}</div>
-  </div>
+
   <!--Address-->
   <div class="form-group">
     <label for="">Address</label>
@@ -33,73 +96,11 @@
       type="text"
       [(ngModel)]="user.Address"
       class="form-control"
-      name=""
-      id=""
-      [ngClass]="{'border-red': nameError}"
+      [ngClass]="{ 'border-red': nameError }"
     />
-    <div class="error" *ngIf="nameError">{{nameError}}</div>
+    <div class="error" *ngIf="nameError">{{ nameError }}</div>
   </div>
-   <!--Phone Number-->
-  <div class="form-group">
-    <label for="">Phone Number</label>
-    <input
-      type="text"
-      [ngClass]="{'border-red': phoneNumberError}"
-      [(ngModel)]="user.PhoneNumber"
-      class="form-control"
-      name=""
-      id=""
-    />
-    <div class="error" *ngIf="phoneNumberError">{{phoneNumberError}}</div>
-  </div>
-   <!--Email-->
-  <div class="form-group">
-    <label for="">Your email</label>
-    <input
-      type="email"
-      [(ngModel)]="user.Email"
-      class="form-control"
-      name=""
-      id=""
-    />
-    <div class="error" *ngIf="emailError">{{emailError}}</div>
-  </div>
-   <!--Identity Number-->
-  <div class="form-group">
-    <label for="">Identity Number</label>
-    <input
-      type="email"
-      [(ngModel)]="user.IdentityNumber"
-      class="form-control"
-      name=""
-      id=""
-    />
-    <div class="error" *ngIf="emailError">{{emailError}}</div>
-  </div>
-  <!--Date of birth-->
-  <div class="form-group">
-    <label for="">Date of birth</label>
-    <input
-      type="email"
-      [(ngModel)]="user.dateofbirth"
-      class="form-control"
-      name=""
-      id=""
-    />
-    <div class="error" *ngIf="emailError">{{emailError}}</div>
-  </div>
-  <!--Gender-->
-  <div class="form-group">
-    <label for="">Gender</label>
-    <input
-      type="email"
-      [(ngModel)]="user.gender"
-      class="form-control"
-      name=""
-      id=""
-    />
-    <div class="error" *ngIf="emailError">{{emailError}}</div>
-  </div>
+
   <!--Currently Employed-->
   <div class="form-group">
     <label for="">Currently Employed?</label>
@@ -107,10 +108,8 @@
       type="email"
       [(ngModel)]="user.currentlyemployed"
       class="form-control"
-      name=""
-      id=""
     />
-    <div class="error" *ngIf="emailError">{{emailError}}</div>
+    <div class="error" *ngIf="emailError">{{ emailError }}</div>
   </div>
   <!--Salary Expected-->
   <div class="form-group">
@@ -119,71 +118,47 @@
       type="email"
       [(ngModel)]="user.salaryexpected"
       class="form-control"
-      name=""
-      id=""
     />
-    <div class="error" *ngIf="emailError">{{emailError}}</div>
+    <div class="error" *ngIf="emailError">{{ emailError }}</div>
   </div>
   <!--Experience-->
   <div class="form-group">
     <label for="">Experience?</label>
+    <input type="email" [(ngModel)]="user.Experience" class="form-control" />
+    <div class="error" *ngIf="emailError">{{ emailError }}</div>
+  </div>
+  <!--Certificates-->
+  <div class="form-group">
+    <label for="">Certificates?</label>
+    <input type="email" [(ngModel)]="user.Certificates" class="form-control" />
+    <div class="error" *ngIf="emailError">{{ emailError }}</div>
+  </div>
+  <!--MaritalStatus-->
+  <div class="form-group">
+    <label for="">MaritalStatus?</label>
+    <input type="email" [(ngModel)]="user.MaritalStatus" class="form-control" />
+    <div class="error" *ngIf="emailError">{{ emailError }}</div>
+  </div>
+  <!--WillingToRelocate-->
+  <div class="form-group">
+    <label for="">WillingToRelocate?</label>
     <input
       type="email"
-      [(ngModel)]="user.Experience"
+      [(ngModel)]="user.WillingToRelocate"
       class="form-control"
-      name=""
-      id=""
     />
-    <div class="error" *ngIf="emailError">{{emailError}}</div>
+    <div class="error" *ngIf="emailError">{{ emailError }}</div>
   </div>
-    <!--Certificates-->
-    <div class="form-group">
-      <label for="">Certificates?</label>
-      <input
-        type="email"
-        [(ngModel)]="user.Certificates"
-        class="form-control"
-        name=""
-        id=""
-      />
-      <div class="error" *ngIf="emailError">{{emailError}}</div>
-    </div>
-        <!--MaritalStatus-->
-        <div class="form-group">
-          <label for="">MaritalStatus?</label>
-          <input
-            type="email"
-            [(ngModel)]="user.MaritalStatus"
-            class="form-control"
-            name=""
-            id=""
-          />
-          <div class="error" *ngIf="emailError">{{emailError}}</div>
-        </div>
-            <!--WillingToRelocate-->
-            <div class="form-group">
-              <label for="">WillingToRelocate?</label>
-              <input
-                type="email"
-                [(ngModel)]="user.WillingToRelocate"
-                class="form-control"
-                name=""
-                id=""
-              />
-              <div class="error" *ngIf="emailError">{{emailError}}</div>
-            </div>
-                        <!-- HighestQualification-->
-                        <div class="form-group">
-                          <label for=""> HighestQualification?</label>
-                          <input
-                            type="email"
-                            [(ngModel)]="user.HighestQualification"
-                            class="form-control"
-                            name=""
-                            id=""
-                          />
-                          <div class="error" *ngIf="emailError">{{emailError}}</div>
-                        </div>
+  <!-- HighestQualification-->
+  <div class="form-group">
+    <label for=""> HighestQualification?</label>
+    <input
+      type="email"
+      [(ngModel)]="user.HighestQualification"
+      class="form-control"
+    />
+    <div class="error" *ngIf="emailError">{{ emailError }}</div>
+  </div>
   <!-- ,
   dateofbirth: '',
   gender: '',
@@ -197,34 +172,51 @@
   <div class="form-group">
     <label for="">New password</label>
     <input
-      type="password"
+      [type]="passWordType"
       [(ngModel)]="user.Password"
       class="form-control"
-      name=""
-      id=""
     />
-    <div class="error" *ngIf="passwordError">{{passwordError}}</div>
+    <a class="link-info">
+      <i
+        class="bi bi-eye"
+        *ngIf="passWordType === 'password'"
+        (click)="passWordType = 'text'"
+      ></i>
+      <i
+        class="bi bi-eye-slash"
+        *ngIf="passWordType === 'text'"
+        (click)="passWordType = 'password'"
+      ></i>
+    </a>
+    <div class="error" *ngIf="passwordError">{{ passwordError }}</div>
   </div>
   <div class="form-group">
     <label for="">Confirm password</label>
-    <input  [ngClass]="{'border-red': confirmPasswordError}"
-      type="password"
+    <input
+      [ngClass]="{ 'border-red': confirmPasswordError }"
+      [type]="passWordType"
       [(ngModel)]="confirmPassword"
       class="form-control"
-      name=""
-      id=""
     />
-    <div class="error" *ngIf="confirmPasswordError">{{confirmPasswordError}}</div>
+    <a class="link-info">
+      <i
+        class="bi bi-eye"
+        *ngIf="passWordType === 'password'"
+        (click)="passWordType = 'text'"
+      ></i>
+      <i
+        class="bi bi-eye-slash"
+        *ngIf="passWordType === 'text'"
+        (click)="passWordType = 'password'"
+      ></i>
+    </a>
+    <div class="error" *ngIf="confirmPasswordError">
+      {{ confirmPasswordError }}
+    </div>
   </div>
 
-
-  <button
-    class="btn btn-primary"
-    (click)="signUp()"
-  >
-    Update User
-  </button>
-<!-- 
+  <button class="btn btn-primary" (click)="signUp()">Update User</button>
+  <!-- 
   <div class="alert alert-warning mt-5" *ngIf="error" role="alert">
     {{ error }}
   </div> -->

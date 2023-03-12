@@ -24,6 +24,8 @@ import { ApplicantComponent } from './applicant/applicant.component';
 import { ApplyComponent } from './apply/apply.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { ListApplicantsComponent } from './list-applicants/list-applicants.component';
+import { ApplyForJobComponent } from './apply-for-job/apply-for-job.component';
+import { ApplicationsComponent } from './applications/applications.component';
 
 const routes: Routes = [
   {
@@ -95,6 +97,10 @@ const routes: Routes = [
     component: ReadNewsComponent,
   },
   {
+    path: 'apply-for-job/:id',
+    component: ApplyForJobComponent,
+  },
+  {
     path: 'faq-section',
     component: FAQSectionComponent,
   },
@@ -125,6 +131,10 @@ const routes: Routes = [
   {
     path: 'list-applicants',
     component: ListApplicantsComponent,
+  },
+  {
+    path: 'applications',
+    component: ApplicationsComponent,
   },
 
 ];

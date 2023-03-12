@@ -100,7 +100,7 @@ class User
 
         if ($stmt->rowCount()) {
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
-            $result["Password"] = "***********";
+            //$result["Password"] = "***********";
                   return $result;
         } else {
             return 'Invalid Request';

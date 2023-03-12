@@ -1,0 +1,19 @@
+<input
+  type="file"
+  #upload
+  placeholder="Choose file"
+  (change)="uploadFile(upload.files)"
+  style="display: none"
+/>
+
+
+<div class="_upload" *ngIf="!file">
+  <i class=" bi bi-upload" (click)="upload.click()" alt=""></i>
+</div>
+
+<div class="_upload" *ngIf="file">
+    <a [href]="file" target="_blank" rel="noopener noreferrer">
+        {{fileName}}
+    </a>
+  <i class=" bi bi-pen" (click)="upload.click()" alt=""></i>
+</div>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { faTwitter, faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faContactBook, faMessage } from '@fortawesome/free-regular-svg-icons';
+// import { faTwitter, faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+// import { faContactBook, faMessage } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-footer',
@@ -8,10 +8,9 @@ import { faContactBook, faMessage } from '@fortawesome/free-regular-svg-icons';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
-  faTwitter = faTwitter;
-  faFacebook = faFacebook;
-  faInstagram = faInstagram;
-  faLinkedin = faLinkedin;
-  faContactBook = faContactBook;
-  faMessage = faMessage;
+  faTwitter = '';
+  faFacebook = '';
+  faInstagram = '';
+  faLinkedin = '';
+  faContactBook = '';
 }
