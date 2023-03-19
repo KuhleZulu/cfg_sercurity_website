@@ -1,100 +1,70 @@
 <div class="container-fluid dashboard-list" *ngIf="user">
-    <div class="container">
-      <div class="d-flex mb-5 justify-content-between">
-        <div class="d-flex align-items-center gap-3">
-          <h4>My profile</h4>
-        
-        </div>
-        <div>
-          <button (click)="editProfile()" class="btn btn-dark">
-            <i class="bi bi-pen"></i> Edit profile 
+  <div class="container">
+    <div class="d-flex mb-5 justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <h4>My profile</h4>
+      </div>
+      <div>
+        <!-- <button (click)="editProfile()" class="btn btn-dark">
+          <i class="bi bi-pen"></i> Edit profile
+        </button> -->
+        <a routerLink="/careers" class="btn btn-primary"
+          ><i class="bi bi-briefcase"></i> Apply</a
+        >
+      </div>
+    </div>
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+           My personal info
           </button>
-          <a routerLink="/careers" class="btn btn-primary"><i class="bi bi-briefcase"></i> Apply</a>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse show"
+          aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+           <app-update-user></app-update-user>
+          </div>
         </div>
       </div>
-  
-
-      <p >Name
-        <span>{{user.Name}}</span>
-      </p>
-      <p>Surname
-        <span>{{user.Surname}}</span>
-      </p>
-      <p>Address
-        <span>{{user.Address}}</span>
-      </p>
-      <p>Phone Number
-        <span>{{user.PhoneNumber}}</span>
-      </p>
-      <p>Identity Number
-        <span>{{user.IdentityNumber}}</span>
-      </p>
-      <p>Gender
-        <span>{{user.gender}}</span>
-      </p>
-      
-      <p>Date of birth
-        <span>{{user.dateofbirth}}</span>
-      </p>
-      <p>Currently Employed
-        <span>{{user.currentlyemployed}}</span>
-      </p>
-      <p>Salaray Expected
-        <span>{{user.salaryexpected}}</span>
-      </p>
-      <p>Number of years of Experience
-        <span>{{user.Experience}}</span>
-      </p>
-      <p>Certificates
-        <span>{{user.Certificates}}</span>
-      </p>
-      <p>Marital Status
-        <span>{{user.MaritalStatus}}</span>
-      </p>
-      <p>Are you willing to relocate?
-        <span>{{user.WillingToRelocate}}</span>
-      </p>
-      <p>Highest Qaulitification Level
-        <span>{{user.HighestQualification}}</span>
-      </p>
-      <p>Display picture
-        <span>{{user.Dp}}</span>
-      </p>
-      <p>CV
-        <span>{{user.Cv}}</span>
-      </p>
-
-        <!-- UserId: string;
-        Email: string;
-        Name: string;
-        UserType?: string;
-        Surname: string;
-        Address?: string;
-        Password: string;
-        CompanyId: string;
-        CompanyName?: string;
-        CompanyDp?: string;
-        Slug?: string;
-        RoleId?: number;
-        CreateDate?: string;
-        CreateUserId?: string;
-        ModifyDate?: string;
-        ModifyUserId?: string;
-        NewPassword?: string;
-        ConfirmPassword?: string;
-        StatusId: any;
-        UserToken?: any;
-        Dp?: any;
-        AddressLineHome: string;
-        AddressUrlHome: string;
-        AddressLineWork: string;
-        AddressUrlWork: string;
-        SystemRole?: string;
-        SecurityToken?: string;
-        Viewing?: boolean;
-        PhoneNumber: any;
-        Company?: any; -->
-     
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+           My Applications
+          </button>
+        </h2>
+        <div
+          id="collapseTwo"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingTwo"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <app-my-applications
+              [userId]="user.UserId"
+              *ngIf="user"
+            ></app-my-applications>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  
+</div>

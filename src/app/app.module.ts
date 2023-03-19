@@ -67,6 +67,8 @@ import { QuillModule } from 'ngx-quill';
 import { ApplyForJobComponent } from './apply-for-job/apply-for-job.component';
 import { UplaodComponent } from './uplaod/uplaod.component';
 import { ApplicationsComponent } from './applications/applications.component';
+import { SuccessComponent } from './success/success.component';
+import { MyApplicationsComponent } from './my-applications/my-applications.component';
 
 @NgModule({
   declarations: [
@@ -132,6 +134,8 @@ import { ApplicationsComponent } from './applications/applications.component';
     ApplyForJobComponent,
     UplaodComponent,
     ApplicationsComponent,
+    SuccessComponent,
+    MyApplicationsComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

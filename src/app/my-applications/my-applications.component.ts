@@ -1,18 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Application, initApplication } from 'src/models/application.model';
-import { USER_TYPES } from 'src/models/constants';
-import { User, initUser } from 'src/models/user.model';
+import { User } from 'src/models/user.model';
 import { ApplicationService } from 'src/services/application.service';
 import { QueryService } from 'src/services/query.service';
 import { UserService } from 'src/services/user.service';
 import { UxService } from 'src/services/ux.service';
 
 @Component({
-  selector: 'app-applications',
-  templateUrl: './applications.component.html',
-  styleUrls: ['./applications.component.css'],
+  selector: 'app-my-applications',
+  templateUrl: './my-applications.component.html',
+  styleUrls: ['./my-applications.component.css']
 })
-export class ApplicationsComponent {
+export class MyApplicationsComponent {
+  @Input() userId =''
   applications: Application[] = [];
   showAddUser = false;
   showUpdateUser = false;
@@ -33,7 +33,7 @@ export class ApplicationsComponent {
     this.getAllApllications();
   }
   getAllApllications() {
-    this.applicationService.getAll().subscribe((data) => {
+    this.applicationService.getByApplicant(this.userId).subscribe((data) => {
       if (data && data.length) {
         this.applications = data;
       }

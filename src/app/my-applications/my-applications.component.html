@@ -28,7 +28,6 @@
         <thead>
           <tr>
       
-            <th scope="col">Applicant</th>
             <th scope="col">Job</th>
             <th scope="col">Date Applied</th>
             <th scope="col">Status</th>
@@ -39,7 +38,6 @@
         <tbody>
           <tr *ngFor="let item of applications">
           
-            <td>{{ item.User?.Name }}</td>
             <td>{{ item.Career?.Title }}</td>
             <td>{{ item.Created_date | date : "mediumDate" }}</td>
             <td>{{ item.Status }}</td>
@@ -204,7 +202,7 @@
             </div>
 
             <div class="col-md-12 mt-3">
-              <select (change)="update()" [(ngModel)]="application.Status" class="btn btn-primary w-100 p-2">
+              <select (change)="update()" disabled="" [(ngModel)]="application.Status" class="btn btn-primary w-100 p-2">
                 <option [value]="item" *ngFor="let item of ['Submited','Accepted','Declined']">
                     {{item}}
                   </option>

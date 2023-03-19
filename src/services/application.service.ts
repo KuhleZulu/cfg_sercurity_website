@@ -14,6 +14,10 @@ export class ApplicationService {
     return this.http.get<Application[]>('https://cfgsecurity.co.za/api/api/application/gets-applications.php');
   }
 
+  getByApplicant(userId: string): Observable<Application[]>{
+    return this.http.get<Application[]>(`https://cfgsecurity.co.za/api/api/application/gets-applications-by-userId.php.php?UserId=${userId}`);
+  }
+
   getOne(id: number): Observable<Application>{
     return this.http.get<Application>(`https://cfgsecurity.co.za/api/api/application/get-one.php?ApplicationId=${id}`);
   }

@@ -75,6 +75,22 @@ class Application
         }
         return $results;
     }
+    public function getAllapplicationsByUserId($UserId)
+    {
+        $query = "SELECT * FROM applications where UserId = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute(array($UserId));
+        $results = array();
+        if ($stmt->rowCount()){
+            $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($items as $item) {
+                $item["User"] = $this->getUserById($item["UserId"]);
+                $item["Career"] = $this->getJob($item["CareerId"]);
+                array_push($results, $item);
+            }
+        }
+        return $results;
+    }
     public function getTop6applications()
     {
         $query = "SELECT * FROM applications order by CreatedDate DESC LIMIT 6

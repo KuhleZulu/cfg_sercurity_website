@@ -1,0 +1,12 @@
+._modal {
+    width: fit-content;
+    padding: 3rem;
+    background: var(--white);
+    max-width: 41rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    border-radius: 10px;
+    gap: 6px;
+  }

@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/models/user.model';
 import { AccountService } from 'src/services/account.service';
 import { UxService } from 'src/services/ux.service';
@@ -46,12 +46,19 @@ export class SignupComponent {
   passwordError?: string;
   nameError = '';
   phoneNumberError = '';
+  backTo = '';
 
   constructor(
     private routeTo: Router,
     private accountService: AccountService,
-    private uxService: UxService
-  ) {}
+    private uxService: UxService,
+    private route: ActivatedRoute,
+
+  ) {
+    route.queryParamMap.subscribe(data=>{
+      this.backTo = data.get('backTo') || '';
+    })
+  }
 
   ngOnInit() {}
 
@@ -122,6 +129,10 @@ export class SignupComponent {
               Classes: ['_success'],
             },
           });
+          if(this.backTo){
+            this.routeTo.navigate([this.backTo])
+            return;
+          }
           if ('Admin' === user.UserType) this.routeTo.navigate(['/dashboard']);
           if ('Applicant' === user.UserType) this.routeTo.navigate(['/applicant']);
         }

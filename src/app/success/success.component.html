@@ -1,0 +1,13 @@
+<div class="_overlay" *ngIf="title">
+<div class="_modal">
+    <h1>
+        {{title}}
+    </h1>
+
+    <p>
+        {{message}}
+    </p>
+
+    <button class="btn btn-primary w-100" (click)="ok()">{{action || 'Ok'}}</button>
+</div>
+</div>

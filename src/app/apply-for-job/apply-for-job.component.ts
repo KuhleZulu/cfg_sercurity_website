@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Application } from 'src/models/application.model';
 import { CareersModel } from 'src/models/careers.model';
 import { User } from 'src/models/user.model';
@@ -15,22 +15,30 @@ import { CareersService } from 'src/services/careers.service';
 export class ApplyForJobComponent {
   id = 0;
   user?: User;
-
+  title = '';
+  message = 'Our team will contact as soon as possible with next steps';
   career?: CareersModel;
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private careersService: CareersService,
     private applicationService: ApplicationService,
     private accountService: AccountService
   ) {
     route.params.subscribe((r) => {
       this.id = Number(r['id']);
-      this.getJob();
     });
   }
   ngOnInit() {
     this.accountService.user.subscribe((data) => {
       this.user = data;
+      if (this.user && this.user.UserType === 'Applicant') {
+        this.getJob();
+      } else {
+        this.router.navigate([`/sign-up`], {
+          queryParams: { backTo: `/apply-for-job/${this.id}` },
+        });
+      }
     });
   }
   getJob() {
@@ -42,13 +50,13 @@ export class ApplyForJobComponent {
   }
   saveFile(e: string) {
     if (this.user) {
-      this.user.Cv = e;
+      this.user.AddressLineWork = e;
       this.saveUser();
     }
   }
   saveFileId(e: string) {
     if (this.user) {
-      this.user.IdCopy = e;
+      this.user.AddressLineHome = e;
       this.saveUser();
     }
   }
@@ -63,7 +71,7 @@ export class ApplyForJobComponent {
         UserId: this.user?.UserId || '',
       };
       this.applicationService.save(application).subscribe((data) => {
-        alert('Application success');
+        this.title = 'Thank you for applying for this position';
       });
     }
   }
@@ -71,8 +79,13 @@ export class ApplyForJobComponent {
   saveUser() {
     if (this.user) {
       this.accountService.updateUser(this.user).subscribe((data) => {
-      
+        this.accountService.updateUserState(data);
       });
     }
+  }
+  ok() {
+    this.title = '';
+            this.router.navigate(['/applicant'])
+
   }
 }

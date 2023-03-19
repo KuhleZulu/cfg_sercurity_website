@@ -1,8 +1,8 @@
-<app-banner title="Update User" bg="assets/images/team.PNG"></app-banner>
+<!-- <app-banner title="Update User" bg="assets/images/team.PNG"></app-banner> -->
 
 <div *ngIf="user" class="login bg-white box-shadow border-radius">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
       <div class="form-group">
         <label for="">Your name</label>
         <input
@@ -14,7 +14,7 @@
         <div class="error" *ngIf="nameError">{{ nameError }}</div>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <!--Surname-->
       <div class="form-group">
         <label for="">Surname</label>
@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-4">
       <!--Phone Number-->
       <div class="form-group">
         <label for="">Phone Number</label>
@@ -42,7 +42,7 @@
       </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-4">
       <!--Email-->
       <div class="form-group">
         <label for="">Your email</label>

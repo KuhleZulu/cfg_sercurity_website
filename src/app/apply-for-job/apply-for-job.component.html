@@ -9,14 +9,24 @@
     <div class="col-md-6">
       <div class="form-group">
         <label for="">Your name</label>
-        <input type="text" [(ngModel)]="user.Name" class="form-control" />
+        <input
+          type="text"
+          (change)="saveUser()"
+          [(ngModel)]="user.Name"
+          class="form-control"
+        />
       </div>
     </div>
     <div class="col-md-6">
       <!--Surname-->
       <div class="form-group">
         <label for="">Surname</label>
-        <input type="text" [(ngModel)]="user.Surname" class="form-control" />
+        <input
+          type="text"
+          (change)="saveUser()"
+          [(ngModel)]="user.Surname"
+          class="form-control"
+        />
       </div>
     </div>
 
@@ -28,6 +38,7 @@
           type="text"
           [(ngModel)]="user.PhoneNumber"
           class="form-control"
+          (change)="saveUser()"
         />
       </div>
     </div>
@@ -36,7 +47,12 @@
       <!--Email-->
       <div class="form-group">
         <label for="">Your email</label>
-        <input type="email" [(ngModel)]="user.Email" class="form-control" />
+        <input
+          type="email"
+          (change)="saveUser()"
+          [(ngModel)]="user.Email"
+          class="form-control"
+        />
       </div>
     </div>
 
@@ -46,8 +62,9 @@
         <label for="">Identity Number</label>
         <input
           type="email"
-          [(ngModel)]="user.IdentityNumber"
+          [(ngModel)]="user.AddressUrlHome"
           class="form-control"
+          (change)="saveUser()"
         />
       </div>
     </div>
@@ -58,7 +75,7 @@
         <app-uplaod
           fileName="Your CV.pdf"
           (imageChangedEvent)="saveFile($event)"
-          [file]="user.Cv || ''"
+          [file]="user.AddressLineWork || ''"
         ></app-uplaod>
       </div>
     </div>
@@ -68,7 +85,7 @@
         <app-uplaod
           fileName="Your Id.pdf"
           (imageChangedEvent)="saveFileId($event)"
-          [file]="user.Cv || ''"
+          [file]="user.AddressLineHome || ''"
         ></app-uplaod>
       </div>
     </div>
@@ -77,3 +94,11 @@
     </div>
   </div>
 </div>
+
+<app-success
+  *ngIf="title"
+  (okEvent)="ok()"
+  [title]="title"
+  action="Go to my profile"
+  [message]="message"
+></app-success>
