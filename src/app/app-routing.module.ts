@@ -26,6 +26,7 @@ import { UpdateUserComponent } from './update-user/update-user.component';
 import { ListApplicantsComponent } from './list-applicants/list-applicants.component';
 import { ApplyForJobComponent } from './apply-for-job/apply-for-job.component';
 import { ApplicationsComponent } from './applications/applications.component';
+import { CvStorageComponent } from './cv-storage/cv-storage.component';
 
 const routes: Routes = [
   {
@@ -135,6 +136,10 @@ const routes: Routes = [
   {
     path: 'applications',
     component: ApplicationsComponent,
+  },
+  {
+    path: 'cv_storage',
+    component: CvStorageComponent,
   },
 
 ];

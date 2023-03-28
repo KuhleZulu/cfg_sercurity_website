@@ -1,0 +1,166 @@
+
+<div class="container-fluid dashboard-list">
+    <div class="container">
+      <div class="d-flex mb-5 justify-content-between">
+        <div class="d-flex align-items-center gap-3">
+          <h4>CV STORAGE</h4>
+          <input
+            type="search"
+            class="form-control"
+            placeholder="🔍 Search by title"
+            [(ngModel)]="search"
+            id=""
+          />
+        </div>
+        <div>
+          <button (click)="delete()" class="btn btn-danger">
+            <i class="bi bi-trash"></i> Delete
+          </button>
+          <button
+            (click)="showAddUser = true; initUser()"
+            class="btn btn-primary"
+          >
+            <i class="bi bi-plus"></i> Add
+          </button>
+        </div>
+      </div>
+  
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">
+              <i
+                *ngIf="!allSelected"
+                (click)="selectAll()"
+                class="bi _check bi-square"
+                style="color: rgb(184, 184, 184)"
+              ></i>
+              <i
+                *ngIf="allSelected"
+                (click)="selectAll()"
+                class="bi _check bi-check-square-fill"
+              ></i>
+              
+            </th>
+            <th scope="col">File</th>
+            <th scope="col">Title</th>
+            <th scope="col">Category</th>
+            
+          </tr>
+        </thead>
+  
+        <tbody>
+          <tr *ngFor="let item of cvs">
+            <td>
+              <div class="d-flex">
+                <i
+                  *ngIf="!item.Selected"
+                  (click)="select(cv)"
+                  class="bi _check bi-square"
+                  style="color: rgb(184, 184, 184)"
+                ></i>
+                <i
+                  *ngIf="item.Selected"
+                  (click)="select(cv)"
+                  class="bi _check bi-check-square-fill"
+                ></i>
+                
+              </div>
+            </td>
+            <td>{{ item.file }}</td>
+            <td>{{ item.title }}</td>
+            <td>{{ item.category }}</td>
+  
+            <td>
+              <div class="d-flex">
+                <button (click)="edit(cv)" class="btn btn-light p-2">
+                  <i class="bi bi-pen edit"></i>
+                </button>
+                <button class="btn btn-light p-2" (click)="deleteOne(cv)">
+                  <i class="bi bi-trash delete"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- <app-add-careers *ngIf="showAddUser" (doneEvent)="doneEvent($event)"></app-add-careers>
+          <app-update-career *ngIf="showUpdateUser && careersItem" [careersItem]="careersItem" (doneEvent)="doneEvent($event)"></app-update-career> -->
+    </div>
+  </div>
+  
+  <div class="_overlay" *ngIf="showAddUser && user">
+    <div class="card p-5 w-50">
+      <h5 class="d-flex justify-content-between align-items-center">
+        <span>Add new CV</span>
+        <a (click)="showAddUser = false"><i class="bi bi-x-lg pointer"></i></a>
+      </h5>
+      <input
+        type="text"
+        class="form-control mt-5 mb-2"
+        [(ngModel)]="user.Name"
+        placeholder="Name"
+      />
+      <input
+        type="email"
+        class="form-control mt-5 mb-2"
+        [(ngModel)]="user.Email"
+        placeholder="Email"
+      />
+
+
+      <div class="col-md-12 mb-2">
+        <div class="form-group">
+          <label for="">CV</label>
+          <app-uplaod
+            fileName="CV.pdf"
+            (imageChangedEvent)="saveFile($event)"
+            
+          ></app-uplaod>
+        </div>
+      </div>
+      <!-- [file]="cv.cvs.file || ''" -->
+      <!-- The code above fits into the app upload function -->
+
+
+      <button (click)="save()" class="btn btn-light">Add CV</button>
+    </div>
+  </div>
+  
+  <div class="_overlay" *ngIf="showUpdateUser && user">
+    <div class="card p-5 w-50">
+      <h5 class="d-flex justify-content-between align-items-center">
+        <span>Update applicant</span>
+        <a (click)="showUpdateUser = false"><i class="bi bi-x-lg pointer"></i></a>
+      </h5>
+      <input
+        type="text"
+        class="form-control mt-5 mb-2"
+        [(ngModel)]="user.Name"
+        placeholder="Name"
+      />
+      <input
+        type="email"
+        class="form-control mt-5 mb-2"
+        [(ngModel)]="user.Email"
+        placeholder="Email"
+      />
+      <!-- <input
+        [type]="passWordType"
+        class="form-control mt-5 mb-2"
+        [(ngModel)]="user.Password"
+        placeholder="Password"
+      /> -->
+      <!-- <a class="link-info">
+        <i class="bi bi-eye" *ngIf="passWordType === 'password'" (click)="passWordType = 'text'"></i>
+        <i class="bi bi-eye-slash" *ngIf="passWordType === 'text'"  (click)="passWordType = 'password'"></i>
+      </a> -->
+      <!-- <app-image-widget
+        [image]="user.Dp"
+        (imageChangedEvent)="onImageUploaded($event)"
+      >
+      </app-image-widget> -->
+      <button (click)="update()" class="btn btn-light">Save applicant</button>
+    </div>
+  </div>
+  

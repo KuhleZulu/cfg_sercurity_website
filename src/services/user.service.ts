@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { User } from 'src/models/user.model';
 import { BASE_URL } from 'src/models/constants';
+import { Cv_Storage } from 'src/models/cv_storage.model';
 
 
 @Injectable({
@@ -49,8 +50,12 @@ export class UserService {
     });
   }
 
+  getAllCvs(){
+   return this.http.get<Cv_Storage[]>(`${this.url}/user.get-all-cv.php`);
+  }
+
   getAllUsers() {
-    return this.http.get<User[]>(`${this.url}/user/get-all-users.php`)
+    return this.http.get<User[]>(`${this.url}/user/get-all-users.php`);
   }
 
 

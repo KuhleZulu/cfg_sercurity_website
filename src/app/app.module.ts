@@ -69,6 +69,7 @@ import { UplaodComponent } from './uplaod/uplaod.component';
 import { ApplicationsComponent } from './applications/applications.component';
 import { SuccessComponent } from './success/success.component';
 import { MyApplicationsComponent } from './my-applications/my-applications.component';
+import { CvStorageComponent } from './cv-storage/cv-storage.component';
 
 @NgModule({
   declarations: [
@@ -136,6 +137,7 @@ import { MyApplicationsComponent } from './my-applications/my-applications.compo
     ApplicationsComponent,
     SuccessComponent,
     MyApplicationsComponent,
+    CvStorageComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
