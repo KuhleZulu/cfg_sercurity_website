@@ -16,7 +16,51 @@
 .carousel-caption p {
   color: var(--white);
 }
+.carousel {
+  position: relative;
+}
+.stat {
+  background: var(--primary);
+  width: 60%;
+  position: absolute;
+  height: 10rem;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -5rem;
+  display: grid;
+  padding: 0;
+  grid-template-columns: repeat(3, 1fr);
+}
 
+.stat .child {
+  padding: 20px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.child .bi{
+  background: white;
+  height: 2.5rem;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.child h1{
+  color: white;
+  font-size: .8rem;
+}
+
+.child h1 span {
+  display: block;
+  font-size: 1.2rem;
+}
+.middle {
+  background: var(--cloud);
+}
 @keyframes slide-in {
   0% {
     top: 200%;
