@@ -1,0 +1,25 @@
+.bi{
+    font-size: 3.5rem;
+    color: green;
+}
+h4{
+    padding: 0;margin: 0;
+}
+.col-text-icon{box-shadow: none; background: none;}
+.col-text-icon h1{
+color:  var(--primary);
+}
+
+.col-text-icon .bi {
+    background:  var(--primary);
+    color: white;
+}
+.btn-big{
+    margin-left: .85rem;
+}
+
+@media only screen and (max-width: 600px) {
+   .container{
+    margin-top: 15rem;
+   }
+  }

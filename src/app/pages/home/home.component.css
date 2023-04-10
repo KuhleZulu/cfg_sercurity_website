@@ -1,0 +1,9 @@
+.layer{
+    display: flex;
+    flex-direction: column;
+    gap: 15rem;
+}
+
+/* .mt5{
+    margin-top: 10rem;
+} */

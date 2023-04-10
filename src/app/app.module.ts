@@ -70,6 +70,8 @@ import { ApplicationsComponent } from './applications/applications.component';
 import { SuccessComponent } from './success/success.component';
 import { MyApplicationsComponent } from './my-applications/my-applications.component';
 import { CvStorageComponent } from './cv-storage/cv-storage.component';
+import { AboutSectionComponent } from './about-section/about-section.component';
+import { WhyUsComponent } from './why-us/why-us.component';
 
 @NgModule({
   declarations: [
@@ -138,6 +140,8 @@ import { CvStorageComponent } from './cv-storage/cv-storage.component';
     SuccessComponent,
     MyApplicationsComponent,
     CvStorageComponent,
+    AboutSectionComponent,
+    WhyUsComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

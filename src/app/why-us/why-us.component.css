@@ -1,0 +1,21 @@
+.col-text-icon {
+  box-shadow: none;
+  background: none;
+}
+.col-text-icon h1 {
+  color: var(--primary);
+}
+
+.col-text-icon .bi {
+  background: var(--primary);
+  color: white;
+}
+
+.fancy-heading {
+  margin: 1rem auto;
+  max-width: 40%;
+  text-align: center;
+}
+.fancy-heading .line {
+  transform: translateX(100%);
+}
