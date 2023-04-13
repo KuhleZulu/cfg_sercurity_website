@@ -72,6 +72,9 @@ import { MyApplicationsComponent } from './my-applications/my-applications.compo
 import { CvStorageComponent } from './cv-storage/cv-storage.component';
 import { AboutSectionComponent } from './about-section/about-section.component';
 import { WhyUsComponent } from './why-us/why-us.component';
+import { GeneralFaqsComponent } from './general-faqs/general-faqs.component';
+import { RequestAQuoteComponent } from './request-a-quote/request-a-quote.component';
+import { LogoSliderComponent } from './logo-slider/logo-slider.component';
 
 @NgModule({
   declarations: [
@@ -142,6 +145,9 @@ import { WhyUsComponent } from './why-us/why-us.component';
     CvStorageComponent,
     AboutSectionComponent,
     WhyUsComponent,
+    GeneralFaqsComponent,
+    RequestAQuoteComponent,
+    LogoSliderComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

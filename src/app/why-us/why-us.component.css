@@ -15,6 +15,7 @@
   margin: 1rem auto;
   max-width: 40%;
   text-align: center;
+  font-size: 2rem;
 }
 .fancy-heading .line {
   transform: translateX(100%);

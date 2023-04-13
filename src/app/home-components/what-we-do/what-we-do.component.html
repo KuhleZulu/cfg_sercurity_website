@@ -1,12 +1,16 @@
 <section>
-    <div class="title">
-        <h1>
-            WHAT WE DO
+    <div class="col-md-12">
+        <h1 class="nunito fancy-heading">
+          <span class="top d-block">OUR SERVICES</span>
+          Our professional services
+          <span class="line d-block"><span class="dot"></span></span>
         </h1>
-    </div>
+      </div>
+  
 
     <div class="cards">
-        <app-card *ngFor="let item of whatWeDo_list" (btnEvent)="readWhat_we_do($event)" [newsId]="item.Id" [image]="item.ImageUrl" [title]="item.Title" [button]="'READ MORE'"></app-card>
+        <app-card *ngFor="let item of whatWeDo_list" (btnEvent)="readWhat_we_do($event)" [newsId]="item.Id" [image]="item.ImageUrl" [title]="item.Title" ></app-card>
+        <!-- [button]="'READ MORE'" This goes above to add a read more button, removed for now -->
     </div>
 </section>
 
