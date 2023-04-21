@@ -35,9 +35,9 @@ export class CareerListComponent {
   getAll() {
     this.uxService.updateUXState({ Loading: true });
     this.careersService.getAllCareers().subscribe((data) => {
+      this.uxService.updateUXState({ Loading: false });
+      this.careers = data || [];
       if (data) {
-        this.uxService.updateUXState({ Loading: false });
-        this.careers = data;
         this.careers.map((x) => (x.Selected = false));
       }
     });
