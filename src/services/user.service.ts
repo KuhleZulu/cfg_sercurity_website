@@ -79,4 +79,6 @@ export class UserService {
     return this.http.get<User[]>(`https://cfgsecurity.co.za/api/api/careers/run.php?Query=${query}`);
   }
 
+
+
 }

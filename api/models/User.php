@@ -123,17 +123,19 @@ class User
         }
     }
 
-    public function getUserByEmail($email)
+    /*--------GET USER BY EMAIL ----------*/
+    public function getUserByEmail($Email)
     {
         $query = "SELECT  * FROM users WHERE Email =  ?";
 
         $stmt = $this->conn->prepare($query);
-        $stmt->execute(array($email));
+        $stmt->execute(array($Email));
 
         if ($stmt->rowCount()) {
             return $stmt->fetch(PDO::FETCH_ASSOC);
         }
     }
+      /*--------GET USER BY EMAIL ----------*/
 
 
     public function Update(

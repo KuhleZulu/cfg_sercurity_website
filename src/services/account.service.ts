@@ -50,6 +50,10 @@ export class AccountService {
     return this.http.post<User>(`${this.url}/user/update-user.php`, user);
   }
 
+  emailExists(email: string): Observable<User> {
+    return this.http.get<User>(`${this.url}/api/user/get-users.php?/${email}`);
+  }
+
  
 
   generateAccountActivationReturnLink(token: string) {
@@ -69,4 +73,6 @@ export class AccountService {
     localStorage.clear();
     this.router.navigate(['']);
   }
+
+
 }

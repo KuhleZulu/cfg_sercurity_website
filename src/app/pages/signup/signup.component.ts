@@ -4,6 +4,7 @@ import { User } from 'src/models/user.model';
 import { AccountService } from 'src/services/account.service';
 import { UxService } from 'src/services/ux.service';
 
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -117,6 +118,7 @@ export class SignupComponent {
     return isFormValid;
   }
   signUp() {
+    
     if (this.validate()) {
       this.accountService.signUp(this.newUser).subscribe((user) => {
         if (user && user.UserId) {
@@ -129,6 +131,17 @@ export class SignupComponent {
               Classes: ['_success'],
             },
           });
+           // check if email already exists
+           this.accountService.emailExists(this.email).then((exists) => {
+            if (exists) {
+              // show error message to user
+              alert('Email already exists');
+            } else {
+        // proceed with sign-up logic
+        // ...
+      }
+    });
+  }
           if(this.backTo){
             this.routeTo.navigate([this.backTo])
             return;
